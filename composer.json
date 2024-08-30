@@ -1,0 +1,22 @@
+{
+    "name": "FreddyKS/API_Throttling_Test",
+    "version": "1.0.0",
+    "description": "Test api throttling using curl_multi_exec",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freddy Kurniawan S.",
+            "email": "freddyksoe76712@gmail.com"
+        }
+    ],
+    "require": {
+      "php": "^7.0",
+      "ext-json": "*",
+      "ext-curl": "*"
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^10.4 || ^9.6"
+    }
+}
