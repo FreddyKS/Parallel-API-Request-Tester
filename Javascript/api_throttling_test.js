@@ -31,7 +31,7 @@ async function fetchMultipleUrls() {
     let startTime = new Date();
     var display_loading = 'Fetching ' + parseInt(loop)*parseInt(url_list.length) + ' request';
     document.getElementById('complete').innerHTML=display_loading;
-    document.getElementById('loading').style.visibility='visible';
+    document.getElementById('loading').style.display='block';
     
     const urls = [];
     if(!loop || loop<1){
@@ -78,7 +78,7 @@ async function fetchMultipleUrls() {
             let endTime = new Date();
             let timeElapsed = (endTime - startTime)/1000;
             document.getElementById('complete').innerHTML='`'+document.getElementById('url_list').value+'` done in <br>'+timeElapsed + ' seconds';
-            document.getElementById('loading').style.visibility='hidden';
+            document.getElementById('loading').style.display='none';
             
         
             //Re enable the button
@@ -112,7 +112,7 @@ async function fetchMultipleUrls() {
             let endTime = new Date();
             let timeElapsed = (endTime - startTime)/100;
             document.getElementById('complete').innerHTML='`'+document.getElementById('url_list').value+'` done in <br>'+timeElapsed + ' seconds';
-            document.getElementById('loading').style.visibility='hidden';
+            document.getElementById('loading').style.display='none';
 
 
             //Re enable the button
@@ -123,7 +123,7 @@ async function fetchMultipleUrls() {
         document.getElementById('fetch-loading').style.visibility='visible';
         document.getElementById('fetch-loading').style.backgroundColor='red';
         document.getElementById('fetch-loading').style.color='white';
-        document.getElementById('loading').style.visibility='hidden';
+        document.getElementById('loading').style.display='none';
         document.getElementById('complete').innerHTML='Invalid API `'+document.getElementById('url_list').value+'`<br>Error Detail -> `'+error+'`';
         //Re enable the button on error
         document.getElementById('print').disabled = false;

@@ -7,14 +7,21 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
   Loading Animation
 */
 .loader {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
     border: 16px solid #ebe8e8;
     border-radius: 50%;
     border-top: 16px solid #086eb1;
     width: 60px;
     height: 60px;
+    z-index: 2;
+    background-color: #ebe8e8;
     -webkit-animation: spin 1s linear infinite; /* Safari */
     animation: spin 1s linear infinite;
-    visibility: hidden;
+    display: none; /* Hidden by default */
   }
   
   /* Safari */
