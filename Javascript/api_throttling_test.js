@@ -11,6 +11,7 @@ async function fetchMultipleUrls() {
 
     //Empties the result
     document.getElementById('output').innerHTML = '';
+    
     if(!document.getElementById('url_list').value){
         document.getElementById('fetch-loading').style.visibility='visible';
         document.getElementById('fetch-loading').style.backgroundColor='red';
@@ -113,7 +114,12 @@ async function fetchMultipleUrls() {
         }
 
     } catch (error) {
-        console.error('Error with fetching:', error);
+        document.getElementById('fetch-loading').style.visibility='visible';
+        document.getElementById('fetch-loading').style.backgroundColor='red';
+        document.getElementById('fetch-loading').style.color='white';
+        document.getElementById('loading').style.visibility='hidden';
+        document.getElementById('complete').innerHTML='Invalid API '+document.getElementById('url_list').value+'<br>Error Detail -> '+error;
+        return;
     }
 }
 
