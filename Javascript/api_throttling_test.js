@@ -25,7 +25,7 @@ async function fetchMultipleUrls() {
     }
     else{
         document.getElementById('fetch-loading').style.visibility='visible';
-        document.getElementById('fetch-loading').style.backgroundColor='#00e54c';
+        document.getElementById('fetch-loading').style.backgroundColor='#69ff9b9e';
         document.getElementById('fetch-loading').style.color='black';
     }
     //Loading starts
