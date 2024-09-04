@@ -1,4 +1,4 @@
-# API_Throttling_Test
+# Parallel API Request Simulator
 Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple user request on 1 or more API. From here, the errors can be seen from curl_result.txt in PHP and Result in Javascript
 
 Steps : 
