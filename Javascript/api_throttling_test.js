@@ -11,7 +11,19 @@ async function fetchMultipleUrls() {
 
     //Empties the result
     document.getElementById('output').innerHTML = '';
-
+    if(!document.getElementById('url_list').value){
+        document.getElementById('fetch-loading').style.visibility='visible';
+        document.getElementById('fetch-loading').style.backgroundColor='red';
+        document.getElementById('fetch-loading').style.color='white';
+        var display_loading = '`API list` cannot be empty';
+        document.getElementById('complete').innerHTML=display_loading;
+        return;
+    }
+    else{
+        document.getElementById('fetch-loading').style.visibility='visible';
+        document.getElementById('fetch-loading').style.backgroundColor='#00e54c';
+        document.getElementById('fetch-loading').style.color='black';
+    }
     //Loading starts
     var display_loading = 'Fetching ' + parseInt(loop)*parseInt(url_list.length) + ' request';
     document.getElementById('complete').innerHTML=display_loading;
@@ -20,9 +32,6 @@ async function fetchMultipleUrls() {
     const urls = [];
     if(!loop){
         loop='1';
-    }
-    if(!url_list){
-        return 'API List cannot be empty';
     }
     if(!method){
         method='GET';
@@ -63,6 +72,7 @@ async function fetchMultipleUrls() {
             
             //Loading Complete
             document.getElementById('complete').innerHTML='✔';
+            document.getElementById('fetch-loading').style.visibility='hidden';
             document.getElementById('loading').style.visibility='hidden';
             
         

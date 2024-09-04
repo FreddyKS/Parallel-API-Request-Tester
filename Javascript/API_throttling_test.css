@@ -156,6 +156,6 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     background-color: #00e54c;
     color: black;
     text-align: center;
-    visibility: visible;
+    visibility: hidden;
     padding: 20px;
   }
