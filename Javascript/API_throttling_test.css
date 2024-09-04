@@ -32,7 +32,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
   */
   .button {
     width: 100%;
-    background-color: #00d0ff;
+    background-color: #006aff;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -41,7 +41,10 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     cursor: pointer;
   }
   .button:hover {
-    background-color: #00bee9; /* Green */
+    background-color: rgb(62, 0, 233); /* Green */
+  }
+  .button:disabled {
+    background-color: #00a8ce75; /* Green */
   }
   /*
    Input form
@@ -60,7 +63,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
   */
   .result-field {
     border-radius: 5px;
-    background-color: #d4fefd;
+    background-color: #f7f7f7;
     padding: 20px;
   }
   .result-field h1 {
@@ -117,7 +120,37 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
       position: relative;
       top: 9px;
   }
-
+  /*
+    Header Field
+  */
+  .header-field {
+    border-radius: 5px;
+    background-color: #e4e2e2;
+    padding: 20px;
+  }
+  .header-field h1 {
+      font: 19px verdana;
+      margin: -15px -5px 0;
+  }
+  .header-field h1 span {
+      float: center;
+  }
+  .header-field h1:before {
+      content: ' ';
+      float: center;
+      margin: 9px 3px 0 -1px;
+      width: 16px;
+  }
+  .header-field h1:after {
+      content: ' ';
+      display: block;
+      height: 12px;
+      left: 3px;
+      margin: 0 1px 0 0;
+      overflow: hidden;
+      position: relative;
+      top: 9px;
+  }
   /*
     GET, POST, PATCH, PUT, DELETE coloring
   */

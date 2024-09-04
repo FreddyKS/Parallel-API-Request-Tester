@@ -1,4 +1,5 @@
 async function fetchMultipleUrls() {
+    console.log('Fetch');
     //Retrieve variables
     var loop = document.getElementById('loop').value;
     var url_list = document.getElementById('url_list').value.split("\n");
@@ -18,6 +19,8 @@ async function fetchMultipleUrls() {
         document.getElementById('fetch-loading').style.color='white';
         var display_loading = '`API list` cannot be empty';
         document.getElementById('complete').innerHTML=display_loading;
+        //Re enable the button on error
+        document.getElementById('print').disabled = false;
         return;
     }
     else{
@@ -32,7 +35,7 @@ async function fetchMultipleUrls() {
     document.getElementById('loading').style.visibility='visible';
     
     const urls = [];
-    if(!loop){
+    if(!loop || loop<1){
         loop='1';
     }
     if(!method){
@@ -123,6 +126,8 @@ async function fetchMultipleUrls() {
         document.getElementById('fetch-loading').style.color='white';
         document.getElementById('loading').style.visibility='hidden';
         document.getElementById('complete').innerHTML='Invalid API `'+document.getElementById('url_list').value+'`<br>Error Detail -> `'+error+'`';
+        //Re enable the button on error
+        document.getElementById('print').disabled = false;
         return;
     }
 }
@@ -145,7 +150,7 @@ function changeColor(){
 
 function displayDanger(){
     var loop = document.getElementById('loop').value;
-    if(loop>20){
+    if(loop>50){
         document.getElementById('danger_parallel').style.visibility='visible';
     }
     else{
