@@ -122,7 +122,7 @@ async function fetchMultipleUrls() {
         document.getElementById('fetch-loading').style.backgroundColor='red';
         document.getElementById('fetch-loading').style.color='white';
         document.getElementById('loading').style.visibility='hidden';
-        document.getElementById('complete').innerHTML='Invalid API `'+document.getElementById('url_list').value+'`<br>Error Detail -> '+error;
+        document.getElementById('complete').innerHTML='Invalid API `'+document.getElementById('url_list').value+'`<br>Error Detail -> `'+error+'`';
         return;
     }
 }
