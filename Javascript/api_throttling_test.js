@@ -26,6 +26,7 @@ async function fetchMultipleUrls() {
         document.getElementById('fetch-loading').style.color='black';
     }
     //Loading starts
+    let startTime = new Date();
     var display_loading = 'Fetching ' + parseInt(loop)*parseInt(url_list.length) + ' request';
     document.getElementById('complete').innerHTML=display_loading;
     document.getElementById('loading').style.visibility='visible';
@@ -72,8 +73,9 @@ async function fetchMultipleUrls() {
             });
             
             //Loading Complete
-            document.getElementById('complete').innerHTML='✔';
-            document.getElementById('fetch-loading').style.visibility='hidden';
+            let endTime = new Date();
+            let timeElapsed = (endTime - startTime)/1000;
+            document.getElementById('complete').innerHTML='`'+document.getElementById('url_list').value+'` done in <br>'+timeElapsed + ' seconds';
             document.getElementById('loading').style.visibility='hidden';
             
         
@@ -105,7 +107,9 @@ async function fetchMultipleUrls() {
             });
 
             //Loading Complete
-            document.getElementById('complete').innerHTML='✔';
+            let endTime = new Date();
+            let timeElapsed = (endTime - startTime)/100;
+            document.getElementById('complete').innerHTML='`'+document.getElementById('url_list').value+'` done in <br>'+timeElapsed + ' seconds';
             document.getElementById('loading').style.visibility='hidden';
 
 
