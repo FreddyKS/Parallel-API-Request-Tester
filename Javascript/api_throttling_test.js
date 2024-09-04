@@ -1,5 +1,4 @@
 async function fetchMultipleUrls() {
-    console.log('Fetch');
     //Retrieve variables
     var loop = document.getElementById('loop').value;
     var url_list = document.getElementById('url_list').value.split("\n");

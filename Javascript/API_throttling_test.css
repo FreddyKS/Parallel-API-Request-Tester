@@ -51,6 +51,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
   */
   input[type=text],input[type=number], input[type=form], select, textarea{
     width: 100%;
+    font: 14px Consolas;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -67,7 +68,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     padding: 20px;
   }
   .result-field h1 {
-      font: 19px verdana;
+      font: 19px Consolas;
       margin: -15px -5px 0;
   }
   .result-field h1 span {
