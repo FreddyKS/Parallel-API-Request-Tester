@@ -11,41 +11,51 @@
     <title>API Throttle Test</title>
 </head>
 <body>
-    <center>
-    <fieldset>
-        <legend>Input</legend>
+    <div class="input-field">
+        <h1><span>Input</span></h1>
+        <div class="input-field">
     <label for="method">Method</label><br>
-    <select name="method" id="method">
-        <option value="GET">GET</option>
-        <option value="POST">POST</option>
-        <option value="PATCH">PATCH</option>
-        <option value="PUT">PUT</option>
-        <option value="DELETE">DELETE</option>
+    <select name="method" id="method" onchange="changeColor();" class="getmethod">
+        <option value="GET" class="getmethod" selected="selected">GET</option>
+        <option value="POST" class="postmethod">POST</option>
+        <option value="PATCH" class="updatemethod">PATCH</option>
+        <option value="PUT" class="updatemethod">PUT</option>
+        <option value="DELETE" class="deletemethod">DELETE</option>
     </select><br>
 
     <label for="url_list">API list</label><br>
-    <textarea id="url_list" name="url_list" rows="4" cols="50">https://catfact.ninja/fact</textarea><br>
+    <textarea id="url_list" name="url_list" rows="4" cols="50" required>https://catfact.ninja/fact</textarea><br>
     
-    <label for="loop">How many parallel</label><br>
-    <input type="number" name="loop" id="loop" value="1"></input><br>
+    <label for="post_field">POST / PUT / PATCH field (POSTFIELD)</label><br>
+    <textarea id="post_field" name="post_field" rows="4" cols="50"></textarea><br>
 
+    <label for="loop">How many parallel</label><br>
+    <input type="number" name="loop" id="loop" value="1" onchange="displayDanger();" required></input><br>
+    <div id="danger_parallel" class="danger-parallel">
+        <span>WARNING : More than 20 parallel requests. The developer held no responsibility for anything</span>
+    </div>
     <label for="bearer">Bearer</label><br>
     <input type="form" id="bearer" name="bearer" value=""></input><br>
 
-    <label for="content_type">Content-Type</label><br>
+    <label for="content_type">Header</label><br>
     <input type="form" id="content_type" name="content_type" value="application/json"></input><br>
     <br>
     <button id="print" class="button" onclick="fetchMultipleUrls();">Test</button><br><br>
-    <span id="complete"></span>
-    </fieldset>
-    </center>
-    <fieldset>
-        <legend>Result</legend>
+    <div class="fetching-loading">
+        <span id="complete"></span>
+    </div>
+    </div>
+    </div>
+
+    <div class="result-field">
+        <h1><span>Result</span></h1>
+        <div class="result-field">
         <center>
         <div id="loading" class="loader"></div>
         </center>
         <pre id="output"></pre><br>
-    </fieldset>
+        </div>
+    </div>
     </center>
 </body>
 </html>

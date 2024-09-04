@@ -2,6 +2,10 @@
 /* Style the button that is used to open and close the collapsible content 
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
 */
+
+/*
+  Loading Animation
+*/
 .loader {
     border: 16px solid #ebe8e8;
     border-radius: 50%;
@@ -23,24 +27,135 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-
+  /*
+    Test Button
+  */
   .button {
-    background-color: #00d0ff; /* Green */
-    border: none;
+    width: 100%;
+    background-color: #00d0ff;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
   .button:hover {
     background-color: #00bee9; /* Green */
-    border: none;
-    color: white;
-    padding: 14px 31px;
-    text-align: center;
-    text-decoration: none;
+  }
+  /*
+   Input form
+  */
+  input[type=text],input[type=number], input[type=form], select, textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
     display: inline-block;
-    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  /*
+    Result Field
+  */
+  .result-field {
+    border-radius: 5px;
+    background-color: #d4fefd;
+    padding: 20px;
+  }
+  .result-field h1 {
+      font: 19px verdana;
+      margin: -15px -5px 0;
+  }
+  .result-field h1 span {
+      float: left;
+  }
+  .result-field h1:before {
+      content: ' ';
+      float: left;
+      margin: 9px 3px 0 -1px;
+      width: 16px;
+  }
+  .result-field h1:after {
+      content: ' ';
+      display: block;
+      height: 24px;
+      left: 3px;
+      margin: 0 1px 0 0;
+      overflow: hidden;
+      position: relative;
+      top: 9px;
+  }
+/*
+  Input Field
+*/
+  .input-field {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .input-field h1 {
+      font: 19px verdana;
+      margin: -15px -5px 0;
+  }
+  .input-field h1 span {
+      float: left;
+  }
+  .input-field h1:before {
+      content: ' ';
+      float: left;
+      margin: 9px 3px 0 -1px;
+      width: 16px;
+  }
+  .input-field h1:after {
+      content: ' ';
+      display: block;
+      height: 24px;
+      left: 3px;
+      margin: 0 1px 0 0;
+      overflow: hidden;
+      position: relative;
+      top: 9px;
+  }
+
+  /*
+    GET, POST, PATCH, PUT, DELETE coloring
+  */
+  .getmethod {
+    color: green;
+    font-weight: bold;
+  }
+  .postmethod {
+    color: #BF7A03;
+    font-weight: bold;
+  }
+  .updatemethod {
+    color: purple;
+    font-weight: bold;
+  }
+  .deletemethod {
+    color: red;
+    font-weight: bold;
+  }
+
+  /*
+    Danger method
+  */
+  .danger-parallel {
+    border-radius: 5px;
+    background-color: #BF7A03;
+    color: white;
+    visibility: hidden;
+    padding: 20px;
+  }
+  /*
+    Danger method
+  */
+  .fetching-loading {
+    border-radius: 5px;
+    background-color: #00e54c;
+    color: black;
+    text-align: center;
+    visibility: visible;
+    padding: 20px;
   }

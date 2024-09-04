@@ -72,3 +72,29 @@ async function fetchMultipleUrls() {
         console.error('Error with fetching:', error);
     }
 }
+
+function changeColor(){
+    var method = document.getElementById('method').value;
+    if(method=='GET'){
+        document.getElementById('method').className='getmethod';
+    }
+    else if(method=='POST'){
+        document.getElementById('method').className='postmethod';
+    }
+    else if(method=='PUT' || method=='PATCH'){
+        document.getElementById('method').className='updatemethod';
+    }
+    else{
+        document.getElementById('method').className='deletemethod';
+    }
+}
+
+function displayDanger(){
+    var loop = document.getElementById('loop').value;
+    if(loop>20){
+        document.getElementById('danger_parallel').style.visibility='visible';
+    }
+    else{
+        document.getElementById('danger_parallel').style.visibility='hidden';
+    }
+}
