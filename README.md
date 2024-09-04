@@ -11,9 +11,28 @@ Steps :
 2. Fill the required parameters : 
     2.a. API List -> list tested api
     2.b. How many parallel -> Concurrent requests per API in List API
-   
+    
    Fill the optional parameters
-    2.c. Bearer -> If your api requires bearer, please insert it here
-3. Click 'Test' and wait for the result in Result
+    2.c. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, here is the example
+       2.c.a Example
+    
+      API List  
+          'https://catfact.ninja/fact'
+          'https://webhook-site.com/api/staging/webhook/92 '
+          
+      POST / PUT / PATCH field (POSTFIELD)  
+          {'data':'data_catfact'}
+          {'data':'data_webhook'}
+     
+      How many parallel 
+          2
+     
+      The api will be accessed like this: 
+      > https://catfact.ninja/fact (2 times), each of them has postfield -> {'data':'data_catfact'}
+      > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield -> {'data':'data_webhook'}
+
+    2.d. Bearer -> If your api requires bearer, please insert it here
+
+4. Click 'Test' and wait for the result in Result
 
 NOTE : API rate limit error may varies, some are null, some returns 429 Too Many Requests, google drive returns 403 forbidden kindof.

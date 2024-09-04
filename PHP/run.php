@@ -11,11 +11,16 @@
  *      'https://catfact.ninja/fact',
  *      'https://webhook-site.com/api/staging/webhook/92 '
  *      );
+ *  $postfield = array(
+ *      array('data'=>'data_catfact'),
+ *      array('data'=>'data_webhook')
+ * );
  *  $is_looped = 2;
  * 
  *  The api will be accessed like this: 
- *  > https://catfact.ninja/fact (2 times)
- *  > https://webhook-site.com/api/staging/webhook/92 (2 times)
+ *  > https://catfact.ninja/fact (2 times), each of them has postfield -> array('data'=>'data_catfact')
+ *  > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield -> array('data'=>'data_webhook')
+ * 
  * 
  *  Total 4 apis are accessed
  * 4. See curl_result.txt for the result, the format is in list with either response, if no response at all, then ""
@@ -39,6 +44,9 @@ $list_api = array(
     //Fill your api delimited with 'https://catfact.ninja/fact', example
     'https://catfact.ninja/fact'
 );
+$postfield = array(
+
+);
 /**
  * end of EDIT THESE FIELD
  */
@@ -51,18 +59,13 @@ if($multi_exec==true){
         for($i=$j*$is_looped;$i<($j+1)*$is_looped;$i++){
             $ch[$i] = curl_init();
             curl_setopt($ch[$i], CURLOPT_URL, $la);
-            if($bearer==''){
-                curl_setopt($ch[$i], CURLOPT_HTTPHEADER, array(
-                    'Content-Type: application/json',
-                    'Accept: application/json'
-                ));
-            }
-            else{
-                curl_setopt($ch[$i], CURLOPT_HTTPHEADER, array(
-                    'Content-Type: application/json',
-                    'Accept: application/json',
-                    "Authorization: Bearer $bearer"
-                ));
+            curl_setopt($ch[$i], CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Accept: application/json',
+                "Authorization: Bearer $bearer"
+            ));
+            if(strtolower($method)!='get'){
+                curl_setopt($ch[$i], CURLOPT_POSTFIELDS, $postfield[$j]);
             }
             curl_setopt($ch[$i], CURLOPT_CUSTOMREQUEST, $method);
             curl_setopt($ch[$i], CURLOPT_RETURNTRANSFER, 1);
@@ -105,20 +108,15 @@ else{
         for($i=0;$i<$is_looped;$i++){
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $la);
-            if($bearer==''){
-                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                    'Content-Type: application/json',
-                    'Accept: application/json'
-                ));
-            }
-            else{
-                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                    'Content-Type: application/json',
-                    'Accept: application/json',
-                    "Authorization: Bearer $bearer"
-                ));
-            }
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Accept: application/json',
+                "Authorization: Bearer $bearer"
+            ));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            if(strtolower($method)!='get'){
+                curl_setopt($ch[$i], CURLOPT_POSTFIELDS, $postfield[$j]);
+            }
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
 
             $response = curl_exec($ch);
