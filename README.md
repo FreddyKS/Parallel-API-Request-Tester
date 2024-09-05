@@ -1,4 +1,5 @@
 # Parallel API Request Tester
+Want to know how far a server can handle multiple user request? Then this software is for you
 Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple user request on 1 or more API. From here, the errors can be seen from curl_result.txt in PHP and Result in Javascript
 
 Steps : 
@@ -36,3 +37,5 @@ Steps :
 4. Click 'Test' and wait for the result in Result
 
 NOTE : API rate limit error may varies, some are null, some returns 429 Too Many Requests, google drive returns 403 forbidden kindof.
+
+Author : FreddyKSoe76712@gmail.com
