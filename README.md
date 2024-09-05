@@ -39,3 +39,5 @@ Steps :
 NOTE : API rate limit error may varies, some are null, some returns 429 Too Many Requests, google drive returns 403 forbidden kindof.
 
 Author : FreddyKSoe76712@gmail.com
+
+<b>WARNING : BY USING THIS TOOL, YOU AGREED NOT TO BE INVOLVED IN DOS ATTACK. DOS ATTACK IS ILLEGAL AND CAN CAUSE YOU SERIOUS TROUBLE</b>
