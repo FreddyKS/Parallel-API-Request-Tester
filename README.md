@@ -1,5 +1,5 @@
 # Parallel API Request Tester
-Want to know how far a server can handle multiple user request? Then this software is for you
+Want to know how far a server can handle multiple user request? Then this software is for you<br>
 Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple user request on 1 or more API. From here, the errors can be seen from curl_result.txt in PHP and Result in Javascript
 
 Steps : 
@@ -29,7 +29,7 @@ Steps :
           2
      
       The api will be accessed like this: 
-      > https://catfact.ninja/fact (2 times), each of them has postfield -> {'data':'data_catfact'}
+      > https://catfact.ninja/fact (2 times), each of them has postfield -> {'data':'data_catfact'}<br>
       > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield -> {'data':'data_webhook'}
 
     2.d. Bearer -> If your api requires bearer, please insert it here
