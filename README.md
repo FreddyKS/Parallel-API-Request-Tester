@@ -18,11 +18,11 @@ Steps :
        2.c.a Example
     
       API List  
-          'https://catfact.ninja/fact'
+          'https://catfact.ninja/fact'<br>
           'https://webhook-site.com/api/staging/webhook/92 '
           
       POST / PUT / PATCH field (POSTFIELD)  
-          {'data':'data_catfact'}
+          {'data':'data_catfact'}<br>
           {'data':'data_webhook'}
      
       How many parallel 
