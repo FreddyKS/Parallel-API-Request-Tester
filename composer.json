@@ -1,5 +1,5 @@
 {
-    "name": "FreddyKS/API-Throttling-Test",
+    "name": "freddyks/api-throttling-test",
     "version": "1.0.0",
     "description": "Test api throttling using curl_multi_exec",
     "type": "library",
