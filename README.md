@@ -3,11 +3,11 @@ Want to know how far a server can handle request from multiple user at the same 
 Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple user request on 1 or more API. From here, the errors can be seen from curl_result.txt in PHP and Result in Javascript
 
 Steps : 
-> PHP
+> Open PHP folder then :
 1. Open the run.php, edit the variables inside EDIT THESE FIELD
 2. php run.php 
 
-> HTML + JavaScript
+> Open `HTML + JavaScript` folder then :
 1. Open run.html in web browser
 2. Fill the required parameters : 
     2.a. API List -> list tested api
