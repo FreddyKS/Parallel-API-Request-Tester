@@ -3,7 +3,7 @@
         'name' => 'freddyks/parallel-api-request-tester',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '71703e633fae9e7617a921c198f8490f6686d9eb',
+        'reference' => '4e69dac77ab101a18eec8887c13a87dc6608499f',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'freddyks/parallel-api-request-tester' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '71703e633fae9e7617a921c198f8490f6686d9eb',
+            'reference' => '4e69dac77ab101a18eec8887c13a87dc6608499f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
