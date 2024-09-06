@@ -49,6 +49,9 @@ async function fetchMultipleUrls() {
 
         }
     }
+    let afterLoop = new Date();
+    let timeLoop = (afterLoop-startTime)/1000;
+    console.log('urls.push duration : '+timeLoop+' s');
     try {
         //If GET, don't send body
         if(method=='GET'){
@@ -77,7 +80,7 @@ async function fetchMultipleUrls() {
             //Loading Complete
             let endTime = new Date();
             let timeElapsed = (endTime - startTime)/1000;
-            document.getElementById('complete').innerHTML='`'+document.getElementById('url_list').value+'` done in <br>'+timeElapsed + ' seconds';
+            document.getElementById('complete').innerHTML=loop+' parallel `'+method+'` request on '+'`'+document.getElementById('url_list').value+'` done in <br>'+timeElapsed + ' seconds';
             document.getElementById('loading').style.display='none';
             
         
@@ -110,7 +113,7 @@ async function fetchMultipleUrls() {
 
             //Loading Complete
             let endTime = new Date();
-            let timeElapsed = (endTime - startTime)/100;
+            let timeElapsed = (endTime - startTime)/1000;
             document.getElementById('complete').innerHTML='`'+document.getElementById('url_list').value+'` done in <br>'+timeElapsed + ' seconds';
             document.getElementById('loading').style.display='none';
 
