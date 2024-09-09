@@ -4,8 +4,17 @@ async function fetchMultipleUrls() {
     var url_list = document.getElementById('url_list').value.split("\n");
     var method = document.getElementById('method').value;
     var token = document.getElementById('bearer').value.split("\n");
-    var postfield = document.getElementById('post_field').value;
+    //https://chatgpt.com/share/8a0a8009-6292-4165-bac9-92c8e9ec87d5
+    //Split json filled inputs by } (any whitespaces between) {, without removing } and {
+    var postfield_get = document.getElementById('post_field').value.split(/(?<=[}])\s*(?=[{])/g);
     var content = document.getElementById('content_type').value;
+    
+    //https://medium.com/@shemar.gordon32/how-to-split-and-keep-the-delimiter-s-d433fb697c65
+    //Test the app here
+    console.log(postfield_get);
+
+    //End of testing
+
     //Disable the button
     document.getElementById('print').disabled = true;
 
@@ -22,12 +31,24 @@ async function fetchMultipleUrls() {
         document.getElementById('print').disabled = false;
         return;
     }
-    else if(url_list.length>1 && token.length>0){
+    else if(url_list.length>1 && token.length>1){
         if(url_list.length!=token.length){
             document.getElementById('fetch-loading').style.visibility='visible';
             document.getElementById('fetch-loading').style.backgroundColor='red';
             document.getElementById('fetch-loading').style.color='white';
             var display_loading = 'TOKEN NOT EMPTY\n `Bearer` lines have to be the same as `API list`';
+            document.getElementById('complete').innerHTML=display_loading;
+            //Re enable the button on error
+            document.getElementById('print').disabled = false;
+            return;
+        }
+    }
+    else if(url_list.length>1 && postfield_get.length>1){
+        if(url_list.length!=postfield_get.length){
+            document.getElementById('fetch-loading').style.visibility='visible';
+            document.getElementById('fetch-loading').style.backgroundColor='red';
+            document.getElementById('fetch-loading').style.color='white';
+            var display_loading = 'MULTIPLE POSTFIELD NOT EMPTY\n `POST FIELD` lines have to be the same as `API list`';
             document.getElementById('complete').innerHTML=display_loading;
             //Re enable the button on error
             document.getElementById('print').disabled = false;
@@ -47,6 +68,7 @@ async function fetchMultipleUrls() {
     
     const urls = [];
     const bearers = [];
+    const postfield = [];
     if(!loop || loop<1){
         loop='1';
     }
@@ -56,10 +78,14 @@ async function fetchMultipleUrls() {
     if(!content){
         content='application/json';
     }
+    
     for(var i=0;i<url_list.length; i++){
         for(let j=0;j<loop;j++){
             urls.push(url_list[i]);
             bearers.push(token[i]);
+            if(method!='GET'){
+                postfield.push(postfield_get[i]);
+            }
         }
     }
     let afterLoop = new Date();

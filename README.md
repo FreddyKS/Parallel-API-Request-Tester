@@ -14,12 +14,12 @@ Steps :
     2.b. How many parallel -> Concurrent requests per API in List API
     
    Fill the optional parameters
-    2.c. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, here is the example
+    2.c. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, make sure the json is raw and not beautified, here is the example
        2.c.a Example
     
       API List  
           'https://catfact.ninja/fact'<br>
-          'https://webhook-site.com/api/staging/webhook/92 '
+          'https://webhook-site.com/api/staging/webhook/92'
           
       POST / PUT / PATCH field (POSTFIELD)  
           {'data':'data_catfact'}<br>
@@ -32,7 +32,16 @@ Steps :
       > https://catfact.ninja/fact (2 times), each of them has postfield -> {'data':'data_catfact'}<br>
       > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield -> {'data':'data_webhook'}
 
-    2.d. Bearer -> If your api requires bearer, please insert it here
+    2.d. Bearer -> If your api requires bearer, please insert it here, if some of the api don't have bearer, then empty it. Example : 
+        API List  
+          'https://catfact.ninja/fact'<br>
+          'https://webhook-site.com/api/staging/webhook/92'<br>
+          'https://webhook-site.com/api/staging-no-auth/webhook/92'
+          
+        Bearer  
+          bearer1<br>
+          <br>
+          bearer3
 
 4. Click 'Test' and wait for the result in Result
 
