@@ -3,15 +3,19 @@ async function fetchMultipleUrls() {
     var loop = document.getElementById('loop').value;
     var url_list = document.getElementById('url_list').value.split("\n");
     var method = document.getElementById('method').value;
+    //var token = document.getElementById('bearer').value;
     var token = document.getElementById('bearer').value.split("\n");
     //https://chatgpt.com/share/8a0a8009-6292-4165-bac9-92c8e9ec87d5
+    
     //Split json filled inputs by } (any whitespaces between) {, without removing } and {
     var postfield_get = document.getElementById('post_field').value.split(/(?<=[}])\s*(?=[{])/g);
+    
+    var postfield = document.getElementById('post_field').value;
     var content = document.getElementById('content_type').value;
     
     //https://medium.com/@shemar.gordon32/how-to-split-and-keep-the-delimiter-s-d433fb697c65
     //Test the app here
-    console.log(postfield_get);
+    
 
     //End of testing
 
@@ -67,8 +71,11 @@ async function fetchMultipleUrls() {
     document.getElementById('loading').style.display='block';
     
     const urls = [];
-    const bearers = [];
-    const postfield = [];
+    /*
+        Multiple bearers and postfield is currently not supported
+        const bearers = [];
+        const postfield = [];
+    */
     if(!loop || loop<1){
         loop='1';
     }
@@ -81,13 +88,25 @@ async function fetchMultipleUrls() {
     
     for(var i=0;i<url_list.length; i++){
         for(let j=0;j<loop;j++){
-            urls.push(url_list[i]);
-            bearers.push(token[i]);
+            var url_inside = [];
+            url_inside['url']=url_list[i];
+            url_inside['bearer']=token[i];
+            if(method!='GET'){
+                url_inside['postfield']=postfield_get[i];
+            }
+            urls.push(url_inside);
+            /*
+            Multiple bearers and postfields is currently not supported
+            if(token.length>1){
+                bearers.push(token[i]);
+            }
             if(method!='GET'){
                 postfield.push(postfield_get[i]);
             }
+            */
         }
     }
+    console.log(urls);
     let afterLoop = new Date();
     let timeLoop = (afterLoop-startTime)/1000;
     console.log('urls.push duration : '+timeLoop+' s');
@@ -97,10 +116,10 @@ async function fetchMultipleUrls() {
             // Run these requests in parallel using Promise.all
                 const responses = await Promise.all(
                     urls.map(url => 
-                        fetch(url, {
+                        fetch(url.url, {
                             method: `${method}`,
                             headers: {
-                                'Authorization': `Bearer ${token}`,
+                                'Authorization': `Bearer ${url.bearer}`,
                                 'Content-Type': `${content}`
                             }
                         })
@@ -130,13 +149,13 @@ async function fetchMultipleUrls() {
             // Run these requests in parallel using Promise.all
             const responses = await Promise.all(
                 urls.map(url => 
-                    fetch(url, {
+                    fetch(url.url, {
                         method: `${method}`,
                         headers: {
-                            'Authorization': `Bearer ${token}`,
+                            'Authorization': `Bearer ${url.bearer}`,
                             'Content-Type': `${content}`
                         },
-                        body: JSON.stringify(postfield)
+                        body: url.postfield
                     })
                 )
             );
