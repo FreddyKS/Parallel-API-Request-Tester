@@ -3,7 +3,7 @@ async function fetchMultipleUrls() {
     var loop = document.getElementById('loop').value;
     var url_list = document.getElementById('url_list').value.split("\n");
     var method = document.getElementById('method').value;
-    var token = document.getElementById('bearer').value;
+    var token = document.getElementById('bearer').value.split("\n");
     var postfield = document.getElementById('post_field').value;
     var content = document.getElementById('content_type').value;
     //Disable the button
@@ -22,6 +22,18 @@ async function fetchMultipleUrls() {
         document.getElementById('print').disabled = false;
         return;
     }
+    else if(url_list.length>1 && token.length>0){
+        if(url_list.length!=token.length){
+            document.getElementById('fetch-loading').style.visibility='visible';
+            document.getElementById('fetch-loading').style.backgroundColor='red';
+            document.getElementById('fetch-loading').style.color='white';
+            var display_loading = 'TOKEN NOT EMPTY\n `Bearer` lines have to be the same as `API list`';
+            document.getElementById('complete').innerHTML=display_loading;
+            //Re enable the button on error
+            document.getElementById('print').disabled = false;
+            return;
+        }
+    }
     else{
         document.getElementById('fetch-loading').style.visibility='visible';
         document.getElementById('fetch-loading').style.backgroundColor='#69ff9b9e';
@@ -34,6 +46,7 @@ async function fetchMultipleUrls() {
     document.getElementById('loading').style.display='block';
     
     const urls = [];
+    const bearers = [];
     if(!loop || loop<1){
         loop='1';
     }
@@ -46,7 +59,7 @@ async function fetchMultipleUrls() {
     for(var i=0;i<url_list.length; i++){
         for(let j=0;j<loop;j++){
             urls.push(url_list[i]);
-
+            bearers.push(token[i]);
         }
     }
     let afterLoop = new Date();
