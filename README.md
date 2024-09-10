@@ -7,7 +7,7 @@ Steps :
 1. Open the run.php, edit the variables inside EDIT THESE FIELD
 2. php run.php 
 
-> Open `HTML + JavaScript` folder then :
+> Open `HTML + Javascript` folder then :
 1. Open run.html in web browser
 2. Fill the required parameters : 
     2.a. API List -> list tested api
