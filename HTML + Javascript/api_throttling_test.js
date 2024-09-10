@@ -126,9 +126,8 @@ async function fetchMultipleUrls() {
             // Parse all responses to JSON
             const data = await Promise.all(
                 responses.map(async response => {
-                    if (response && response.ok) {  
-                        // Check if the response is JSON
-                        return response.json(); 
+                    if (response && response.ok) {
+                        return await response.json(); 
                     } 
                     else if (response) {
                         const response_real = response.clone();
@@ -147,7 +146,7 @@ async function fetchMultipleUrls() {
             // Display in file for further analysis
             var data_str="";
             data.forEach(item => {
-                document.getElementById('output').textContent += `${JSON.stringify(item, item, 2)}`;
+                document.getElementById('output').textContent += `${JSON.stringify(item, item, 3)}\r\n\r\n`;
             });
             
             //Loading Complete
@@ -178,8 +177,7 @@ async function fetchMultipleUrls() {
             // Parse all responses to JSON
             const data = await Promise.all(
                 responses.map(async response => {
-                    if (response && response.ok) {  
-                        // Check if the response is JSON
+                    if (response && response.ok) {
                         return await response.json(); 
                     } 
                     else if (response) {
@@ -199,7 +197,7 @@ async function fetchMultipleUrls() {
             // Display in file for further analysis
             var data_str="";
             data.forEach(item => {
-            document.getElementById('output').textContent += `${JSON.stringify(item, item, 2)}`;
+                document.getElementById('output').textContent += `${JSON.stringify(item, item, 3)}\r\n\r\n`;
             });
 
             //Loading Complete
