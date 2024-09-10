@@ -38,12 +38,17 @@ $multi_exec = true;
 //Choose how many times an api in $list_api should be looped
 $is_looped = 61;
 
+//Available Methods : GET, POST, PATCH, PUT, DELETE
 $method = 'GET';
-$bearer = '';
+$bearer = array(
+
+);
 $list_api = array(
     //Fill your api delimited with 'https://catfact.ninja/fact', example
     'https://catfact.ninja/fact'
 );
+
+//Don't fill postfield on GET
 $postfield = array(
 
 );
@@ -62,7 +67,7 @@ if($multi_exec==true){
             curl_setopt($ch[$i], CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
                 'Accept: application/json',
-                "Authorization: Bearer $bearer"
+                "Authorization: Bearer $bearer[$j]"
             ));
             if(strtolower($method)!='get'){
                 curl_setopt($ch[$i], CURLOPT_POSTFIELDS, $postfield[$j]);
@@ -111,7 +116,7 @@ else{
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
                 'Accept: application/json',
-                "Authorization: Bearer $bearer"
+                "Authorization: Bearer $bearer[$j]"
             ));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             if(strtolower($method)!='get'){
