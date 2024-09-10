@@ -8,12 +8,13 @@ async function fetchMultipleUrls() {
     //https://chatgpt.com/share/8a0a8009-6292-4165-bac9-92c8e9ec87d5
     
     //Split json filled inputs by } (any whitespaces between) {, without removing } and {
+    //https://medium.com/@shemar.gordon32/how-to-split-and-keep-the-delimiter-s-d433fb697c65
+    
     var postfield_get = document.getElementById('post_field').value.split(/(?<=[}])\s*(?=[{])/g);
     
-    var postfield = document.getElementById('post_field').value;
-    var content = document.getElementById('content_type').value;
+    //var postfield = document.getElementById('post_field').value;
+    var content = "application/json";
     
-    //https://medium.com/@shemar.gordon32/how-to-split-and-keep-the-delimiter-s-d433fb697c65
     //Test the app here
     
 
@@ -71,11 +72,7 @@ async function fetchMultipleUrls() {
     document.getElementById('loading').style.display='block';
     
     const urls = [];
-    /*
-        Multiple bearers and postfield is currently not supported
-        const bearers = [];
-        const postfield = [];
-    */
+
     if(!loop || loop<1){
         loop='1';
     }
@@ -127,12 +124,30 @@ async function fetchMultipleUrls() {
                 );
             
             // Parse all responses to JSON
-            const data = await Promise.all(responses.map(response => response.json()));
+            const data = await Promise.all(
+                responses.map(async response => {
+                    if (response && response.ok) {  
+                        // Check if the response is JSON
+                        return response.json(); 
+                    } 
+                    else if (response) {
+                        const response_real = response.clone();
+                        try{
+                            return await response_real.json();  // Handle non-OK status
+                        }catch(error){
+                            return await response.text();
+                        }
+                    }
+                    else{
+                        return "(Response from Parallel-API-Request-Tester) => Response unavailable";
+                    }
+                })
+            );
             
             // Display in file for further analysis
             var data_str="";
             data.forEach(item => {
-                document.getElementById('output').innerHTML += `<pre>${JSON.stringify(item, null, 2)}</pre>`;
+                document.getElementById('output').textContent += `${JSON.stringify(item, item, 2)}`;
             });
             
             //Loading Complete
@@ -161,12 +176,30 @@ async function fetchMultipleUrls() {
             );
 
             // Parse all responses to JSON
-            const data = await Promise.all(responses.map(response => response.json()));
+            const data = await Promise.all(
+                responses.map(async response => {
+                    if (response && response.ok) {  
+                        // Check if the response is JSON
+                        return await response.json(); 
+                    } 
+                    else if (response) {
+                        const response_real = response.clone();
+                        try{
+                            return await response_real.json();  // Handle non-OK status
+                        }catch(error){
+                            return await response.text();
+                        }
+                    }
+                    else{
+                        return "(Response from Parallel-API-Request-Tester) => Response unavailable";
+                    }
+                })
+            );
 
             // Display in file for further analysis
             var data_str="";
             data.forEach(item => {
-            document.getElementById('output').innerHTML += `<pre>${JSON.stringify(item, null, 2)}</pre>`;
+            document.getElementById('output').textContent += `${JSON.stringify(item, item, 2)}`;
             });
 
             //Loading Complete

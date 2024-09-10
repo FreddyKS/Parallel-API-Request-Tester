@@ -4,6 +4,12 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
 */
 
 /*
+  Make sure the result doesn't parse HTML tags
+*/
+#output{
+  white-space: pre-wrap;
+}
+/*
   Loading Animation
 */
 .loader {
