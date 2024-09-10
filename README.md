@@ -39,9 +39,9 @@ Steps :
           'https://webhook-site.com/api/staging-no-auth/webhook/92'
           
         Bearer  
-          bearer1<br>
-          <br>
-          bearer3
+            'bearer1'<br>
+            <br>
+            'bearer3'
 
 4. Click 'Test' and wait for the result in Result
 
