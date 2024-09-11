@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parallel-API-Request-Tester</title>
 </head>
-<body>
+<body onload="generate();">
     <div class="header-field">
         <center>
         <h1><span>Parallel-API-Request-Tester</span></h1>
@@ -48,6 +48,28 @@
     <label for="content_type">Header</label><br>
     <input type="form" id="content_type" name="content_type" value="application/json" disabled></input><br>
     <br>
+
+    <div id="user-input" class="inline">
+        <input type="text" 
+               id="submit" 
+               placeholder="Captcha code" />
+    </div>
+
+    <div class="inline" onclick="generate()">
+        <i class="button">
+            &#8635;
+            </i>
+    </div>
+
+    <div id="image" 
+         class="inline" 
+         selectable="False">
+    </div>
+
+    <p id="key"></p>
+    <br>
+    <br>
+
     <button id="print" class="button" onclick="fetchMultipleUrls();">Test</button><br><br>
     <div id='fetch-loading' class="fetching-loading">
         <span id="complete"></span>

@@ -12,10 +12,11 @@ Steps :
 2. Fill the required parameters : 
     2.a. API List -> list tested api
     2.b. How many parallel -> Concurrent requests per API in List API
-    
+    2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate
+
    Fill the optional parameters
-    2.c. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, make sure the json is raw and not beautified, here is the example
-       2.c.a Example
+    2.d. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, make sure the json is raw and not beautified, here is the example
+       2.d.a Example
     
       API List  
           'https://catfact.ninja/fact'<br>
@@ -32,7 +33,7 @@ Steps :
       > https://catfact.ninja/fact (2 times), each of them has postfield -> {'data':'data_catfact'}<br>
       > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield -> {'data':'data_webhook'}
 
-    2.d. Bearer -> If your api requires bearer, please insert it here, if some of the api don't have bearer, then empty it. Example : 
+    2.e. Bearer -> If your api requires bearer, please insert it here, if some of the api don't have bearer, then empty it. Example : 
         API List  
           'https://catfact.ninja/fact'<br>
           'https://webhook-site.com/api/staging/webhook/92'<br>

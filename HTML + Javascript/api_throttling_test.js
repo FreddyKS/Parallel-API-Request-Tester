@@ -3,8 +3,29 @@ async function fetchMultipleUrls() {
     var loop = document.getElementById('loop').value;
     var url_list = document.getElementById('url_list').value.split("\n");
     var method = document.getElementById('method').value;
-    //var token = document.getElementById('bearer').value;
     var token = document.getElementById('bearer').value.split("\n");
+    
+    // -- Captcha validation, prevent bot --
+    var captcha = document.getElementById("image");
+    var usr_input = document.getElementById("submit").value;
+
+    // Check whether the input is equal
+    // to generated captcha or not
+    if (usr_input == captcha.innerHTML) {
+        generate();
+    }
+    else {
+        document.getElementById('fetch-loading').style.visibility='visible';
+        document.getElementById('fetch-loading').style.backgroundColor='red';
+        document.getElementById('fetch-loading').style.color='white';
+        var display_loading = 'Wrong Captcha';
+        document.getElementById('complete').innerHTML=display_loading;
+        //Re enable the button on error
+        document.getElementById('print').disabled = false;
+        generate();
+        return;
+    }
+
     //https://chatgpt.com/share/8a0a8009-6292-4165-bac9-92c8e9ec87d5
     
     //Split json filled inputs by } (any whitespaces between) {, without removing } and {
@@ -247,4 +268,42 @@ function displayDanger(){
     else{
         document.getElementById('danger_parallel').style.visibility='hidden';
     }
+}
+
+//Generate Captcha
+function generate() {
+    // Clear old input
+    document.getElementById("submit").value = "";
+
+    // Access the element to store
+    // the generated captcha
+    captcha = document.getElementById("image");
+    let uniquechar = "";
+
+    const randomchar =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    //Generate different types of blocker
+    if(Math.random() * 60 < 30){
+        captcha.style.textDecorationStyle='wavy';
+    }
+    else if(Math.random() * 60 >= 30 && Math.random() * 60 < 40){
+        captcha.style.textDecorationStyle='solid';
+    }
+    else if(Math.random() * 60 >= 40 && Math.random() * 60 < 50){
+        captcha.style.textDecorationStyle='solid';
+    }
+    else{
+        captcha.style.textDecorationStyle='double';
+    }
+
+    // Generate captcha for length of
+    // 5 with random character
+    for (let i = 1; i < 5; i++) {
+        uniquechar += randomchar.charAt(
+            Math.random() * randomchar.length)
+    }
+
+    // Store generated input
+    captcha.innerHTML = uniquechar;
 }
