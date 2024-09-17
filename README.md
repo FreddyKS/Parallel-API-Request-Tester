@@ -1,11 +1,11 @@
 # Parallel API Request Tester
 Want to know how far a server can handle request from multiple user at the same time? Then this software is for you<br>
-Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple user request on 1 or more API. From here, the errors can be seen from curl_result.txt in PHP and Result in Javascript
+Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple user request on 1 or more API. The api responses can be seen from curl_result.txt in PHP and Result in Javascript
 
 # Steps using PHP
 > Open PHP folder then :
 ```
-1. Open the run.php, edit the variables inside EDIT THESE FIELD
+1. Open the run.php, edit the variables inside EDIT THESE FIELD. Follow the instruction in there
 2. php run.php 
 ```
 
@@ -21,8 +21,10 @@ Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple
     2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate
 <br>
    Fill the optional parameters
-    2.d. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, make sure the json is raw and not beautified, here is the example
-       2.d.a Example
+    2.d. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, 
+    make sure the json is raw and not beautified.
+
+    Example
     
       API List  
           'https://catfact.ninja/fact'
@@ -41,7 +43,10 @@ Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple
       > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield 
         -> {'data':'data_webhook'}
 
-    2.e. Bearer -> If your api requires bearer, please insert it here, if some of the api don't have bearer, then empty it.<br> Example :
+    2.e. Bearer -> If your api requires bearer, please insert it here.
+    If some of the api don't have bearer, then empty it.
+
+    Example :
         API List
           'https://catfact.ninja/fact'
           'https://webhook-site.com/api/staging/webhook/92'
