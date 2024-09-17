@@ -11,8 +11,10 @@ Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple 
 > Open `HTML + Javascript` folder then :
 1. Open run.html in web browser
 2. Fill the required parameters : <br>
-    2.a. API List -> list tested api<br>
-    2.b. How many parallel -> Concurrent requests per API in List API<br>
+    2.a. API List 
+      -> list tested api<br>
+    2.b. How many parallel 
+      -> Concurrent requests per API in List API<br>
     2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate<br>
 <br>
    Fill the optional parameters<br>
@@ -20,30 +22,32 @@ Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple 
        2.d.a Example<br>
     
       API List  
-          'https://catfact.ninja/fact'<br>
-          'https://webhook-site.com/api/staging/webhook/92'<br><br>
+          'https://catfact.ninja/fact'
+          'https://webhook-site.com/api/staging/webhook/92'
 
-      POST / PUT / PATCH field (POSTFIELD)<br>  
-          {'data':'data_catfact'}<br>
-          {'data':'data_webhook'}<br><br>
+      POST / PUT / PATCH field (POSTFIELD) 
+          {'data':'data_catfact'}
+          {'data':'data_webhook'}
      
       How many parallel <br>
           2<br><br>
      
-      The api will be accessed like this:<br> 
-      > https://catfact.ninja/fact (2 times), each of them has postfield -> {'data':'data_catfact'}<br>
-      > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield -> {'data':'data_webhook'}<br><br>
+      The api will be accessed like this:
+      > https://catfact.ninja/fact (2 times), each of them has postfield 
+        -> {'data':'data_catfact'}
+      > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield 
+        -> {'data':'data_webhook'}
 
-    2.e. Bearer -> If your api requires bearer, please insert it here, if some of the api don't have bearer, then empty it.<br> Example :<br> 
-        API List  <br>
-          'https://catfact.ninja/fact'<br>
-          'https://webhook-site.com/api/staging/webhook/92'<br>
-          'https://webhook-site.com/api/staging-no-auth/webhook/92'<br><br>
+    2.e. Bearer -> If your api requires bearer, please insert it here, if some of the api don't have bearer, then empty it.<br> Example :
+        API List
+          'https://catfact.ninja/fact'
+          'https://webhook-site.com/api/staging/webhook/92'
+          'https://webhook-site.com/api/staging-no-auth/webhook/92'
           
-        Bearer  <br>
-            'bearer1'<br>
+        Bearer 
+            'bearer1'
             <br>
-            'bearer3'<br><br>
+            'bearer3'
 
 4. Click 'Test' and wait for the result in Result<br>
 
@@ -54,6 +58,6 @@ NOTE : API rate limit error may varies, some are null, some returns 429 Too Many
 
 # Tokens of Gratitude
 Thanks to these websites for helping me building the frontend and several parts of the javascript
- > https://www.geeksforgeeks.org/
- > https://www.w3schools.com/
- > https://chatgpt.com/
+ > https://www.geeksforgeeks.org/<br>
+ > https://www.w3schools.com/<br>
+ > https://chatgpt.com/<br>
