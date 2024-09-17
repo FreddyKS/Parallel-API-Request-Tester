@@ -10,42 +10,42 @@ Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple 
 # Steps using HTML and Javascript
 > Open `HTML + Javascript` folder then :
 1. Open run.html in web browser
-2. Fill the required parameters : 
-    2.a. API List -> list tested api
-    2.b. How many parallel -> Concurrent requests per API in List API
-    2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate
-
-   Fill the optional parameters
-    2.d. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, make sure the json is raw and not beautified, here is the example
-       2.d.a Example
+2. Fill the required parameters : <br>
+    2.a. API List -> list tested api<br>
+    2.b. How many parallel -> Concurrent requests per API in List API<br>
+    2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate<br>
+<br>
+   Fill the optional parameters<br>
+    2.d. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, make sure the json is raw and not beautified, here is the example<br>
+       2.d.a Example<br>
     
       API List  
           'https://catfact.ninja/fact'<br>
-          'https://webhook-site.com/api/staging/webhook/92'
-          
-      POST / PUT / PATCH field (POSTFIELD)  
-          {'data':'data_catfact'}<br>
-          {'data':'data_webhook'}
-     
-      How many parallel 
-          2
-     
-      The api will be accessed like this: 
-      > https://catfact.ninja/fact (2 times), each of them has postfield -> {'data':'data_catfact'}<br>
-      > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield -> {'data':'data_webhook'}
+          'https://webhook-site.com/api/staging/webhook/92'<br><br>
 
-    2.e. Bearer -> If your api requires bearer, please insert it here, if some of the api don't have bearer, then empty it. Example : 
-        API List  
+      POST / PUT / PATCH field (POSTFIELD)<br>  
+          {'data':'data_catfact'}<br>
+          {'data':'data_webhook'}<br><br>
+     
+      How many parallel <br>
+          2<br><br>
+     
+      The api will be accessed like this:<br> 
+      > https://catfact.ninja/fact (2 times), each of them has postfield -> {'data':'data_catfact'}<br>
+      > https://webhook-site.com/api/staging/webhook/92 (2 times), each of these has postfield -> {'data':'data_webhook'}<br><br>
+
+    2.e. Bearer -> If your api requires bearer, please insert it here, if some of the api don't have bearer, then empty it.<br> Example :<br> 
+        API List  <br>
           'https://catfact.ninja/fact'<br>
           'https://webhook-site.com/api/staging/webhook/92'<br>
-          'https://webhook-site.com/api/staging-no-auth/webhook/92'
+          'https://webhook-site.com/api/staging-no-auth/webhook/92'<br><br>
           
-        Bearer  
+        Bearer  <br>
             'bearer1'<br>
             <br>
-            'bearer3'
+            'bearer3'<br><br>
 
-4. Click 'Test' and wait for the result in Result
+4. Click 'Test' and wait for the result in Result<br>
 
 NOTE : API rate limit error may varies, some are null, some returns 429 Too Many Requests, google drive returns 403 forbidden kindof.
 
