@@ -1,25 +1,28 @@
 # Parallel API Request Tester
 Want to know how far a server can handle request from multiple user at the same time? Then this software is for you<br>
-Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple user request on 1 or more API. From here, the errors can be seen from curl_result.txt in PHP and Result in Javascript
+Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple user request on 1 or more API. From here, the errors can be seen from curl_result.txt in PHP and Result in Javascript
 
 # Steps using PHP
 > Open PHP folder then :
+```
 1. Open the run.php, edit the variables inside EDIT THESE FIELD
 2. php run.php 
+```
 
 # Steps using HTML and Javascript
 > Open `HTML + Javascript` folder then :
+```
 1. Open run.html in web browser
-2. Fill the required parameters : <br>
+2. Fill the required parameters :
     2.a. API List 
-      -> list tested api<br>
+      -> list tested api
     2.b. How many parallel 
-      -> Concurrent requests per API in List API<br>
-    2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate<br>
+      -> Concurrent requests per API in List API
+    2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate
 <br>
-   Fill the optional parameters<br>
-    2.d. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, make sure the json is raw and not beautified, here is the example<br>
-       2.d.a Example<br>
+   Fill the optional parameters
+    2.d. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, make sure the json is raw and not beautified, here is the example
+       2.d.a Example
     
       API List  
           'https://catfact.ninja/fact'
@@ -46,11 +49,11 @@ Parallel request testing mockup in HTML+JavaScript and PHP to test the multiple 
           
         Bearer 
             'bearer1'
-            <br>
+            ''
             'bearer3'
 
-4. Click 'Test' and wait for the result in Result<br>
-
+4. Click 'Test' and wait for the result in Result
+```
 NOTE : API rate limit error may varies, some are null, some returns 429 Too Many Requests, google drive returns 403 forbidden kindof.
 
 # Disclaimer
