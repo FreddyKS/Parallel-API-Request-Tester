@@ -14,6 +14,16 @@ async function fetchMultipleUrls() {
     if (usr_input == captcha.innerHTML) {
         generate();
     }
+    else if(!usr_input){
+        document.getElementById('fetch-loading').style.visibility='visible';
+        document.getElementById('fetch-loading').style.backgroundColor='lightblue';
+        document.getElementById('fetch-loading').style.color='white';
+        var display_loading = 'Please insert Captcha code';
+        document.getElementById('complete').innerHTML=display_loading;
+        //Re enable the button on error
+        document.getElementById('print').disabled = false;
+        return;
+    }
     else {
         document.getElementById('fetch-loading').style.visibility='visible';
         document.getElementById('fetch-loading').style.backgroundColor='red';
@@ -299,7 +309,10 @@ function generate() {
 
     // Generate captcha for length of
     // 5 with random character
-    for (let i = 1; i < 5; i++) {
+    var min = 4;
+    var max = 5;
+    var random_length = Math.floor(Math.random() * (max - min + 1) + min);
+    for (let i = 1; i <= random_length; i++) {
         uniquechar += randomchar.charAt(
             Math.random() * randomchar.length)
     }
