@@ -63,7 +63,7 @@ Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple
 NOTE : API rate limit error may varies, some are null, some returns 429 Too Many Requests, google drive returns 403 forbidden kindof.
 
 # Disclaimer
-<b>ATTENTION : BY USING THIS TOOL, YOU AGREED NOT TO BE INVOLVED IN ANY CYBER ATTACK. THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING</b>
+<b>ATTENTION : BY USING THIS TOOL, YOU AGREED 100% NOT TO BE INVOLVED IN ANY CYBER ATTACK. THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING</b>
 
 # Tokens of Gratitude
 Thanks to these websites for helping me building the frontend and several parts of the javascript
