@@ -1,3 +1,5 @@
+//Parallel api request is inspired by https://chatgpt.com/
+
 async function fetchMultipleUrls() {
     //Retrieve variables
     var loop = document.getElementById('loop').value;

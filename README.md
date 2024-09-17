@@ -21,8 +21,9 @@ Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple
     2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate
 <br>
    Fill the optional parameters
-    2.d. POST / PUT / PATCH field (POSTFIELD) -> Fill it with the same position as the API List, 
-    make sure the json is raw and not beautified.
+    2.d. POST / PUT / PATCH field (POSTFIELD) 
+      -> Fill it with the same position as the API List, 
+         to be safe, make sure the json is raw and not beautified.
 
     Example
     
@@ -68,4 +69,3 @@ NOTE : API rate limit error may varies, some are null, some returns 429 Too Many
 Thanks to these websites for helping me building the frontend and several parts of the javascript
  > https://www.geeksforgeeks.org/<br>
  > https://www.w3schools.com/<br>
- > https://chatgpt.com/<br>
