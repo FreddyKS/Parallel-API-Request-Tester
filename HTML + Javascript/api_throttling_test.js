@@ -160,7 +160,12 @@ async function fetchMultipleUrls() {
             const data = await Promise.all(
                 responses.map(async response => {
                     if (response && response.ok) {
-                        return await response.json(); 
+                        const response_real = response.clone();
+                        try{
+                            return await response_real.json();  // Handle non-OK status
+                        }catch(error){
+                            return await response.text();
+                        } 
                     } 
                     else if (response) {
                         const response_real = response.clone();
@@ -211,7 +216,12 @@ async function fetchMultipleUrls() {
             const data = await Promise.all(
                 responses.map(async response => {
                     if (response && response.ok) {
-                        return await response.json(); 
+                        const response_real = response.clone();
+                        try{
+                            return await response_real.json();  // Handle non-OK status
+                        }catch(error){
+                            return await response.text();
+                        } 
                     } 
                     else if (response) {
                         const response_real = response.clone();
