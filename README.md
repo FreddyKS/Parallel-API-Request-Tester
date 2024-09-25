@@ -1,6 +1,6 @@
 # Parallel API Request Tester
 Want to know how far a server can handle request from multiple user at the same time? Then this software is for you<br>
-Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple user request on 1 or more API. The api responses can be seen from curl_result.txt in PHP and Result in Javascript
+Parallel request testing mockup in HTML, JavaScript, and PHP to test multiple users request on 1 or more API. The api responses can be seen from curl_result.txt in PHP and Result in HTML and Javascript
 
 # Steps using PHP
 > Open PHP folder then :
@@ -15,17 +15,18 @@ Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple
 1. Open run.html in web browser
 2. Fill the required parameters :
     2.a. API List 
-      -> list tested api
+      -> list tested api, just fill it with 1 api/url to avoid confusion
     2.b. How many parallel 
       -> Concurrent requests per API in List API
     2.c. Fill the Captcha, click the button beside 'Captcha code' to regenerate
 <br>
    Fill the optional parameters
     2.d. POST / PUT / PATCH field (POSTFIELD) 
-      -> Fill it with the same position as the API List, 
+      -> If the method is post/put/patch, fill it. 
          to be safe, make sure the json is raw and not beautified.
+         If multiple api is assigned in the API List with the same position as the API List
 
-    Example
+    Example if you use multiple api :
     
       API List  
           'https://catfact.ninja/fact'
@@ -47,7 +48,7 @@ Parallel request testing mockup in HTML, JavaScript and PHP to test the multiple
     2.e. Bearer -> If your api requires bearer, please insert it here.
     If some of the api don't have bearer, then empty it.
 
-    Example :
+    Example on multiple api :
         API List
           'https://catfact.ninja/fact'
           'https://webhook-site.com/api/staging/webhook/92'
