@@ -289,11 +289,31 @@ function changeColor(){
         else{
             document.querySelector('#print').innerHTML = 'Test PATCH '+api_list;
         }
-    }
-    else{
+    }    
+    else if(method=='DELETE'){
         document.getElementById('method').className='deletemethod';
         document.getElementById('print').classList.add('deletemethod');
         document.querySelector('#print').innerHTML = 'Test DELETE '+api_list;
+    }
+    else if(method=='HEAD'){
+        document.getElementById('method').className='headmethod';
+        document.getElementById('print').classList.add('headmethod');
+        document.querySelector('#print').innerHTML = 'Test HEAD '+api_list;
+    }
+    else if(method=='OPTIONS'){
+        document.getElementById('method').className='optionsmethod';
+        document.getElementById('print').classList.add('optionsmethod');
+        document.querySelector('#print').innerHTML = 'Test OPTONS '+api_list;
+    }
+    else if(method=='DELETE'){
+        document.getElementById('method').className='deletemethod';
+        document.getElementById('print').classList.add('deletemethod');
+        document.querySelector('#print').innerHTML = 'Test DELETE '+api_list;
+    }
+    else{
+        document.getElementById('method').className='othermethod';
+        document.getElementById('print').classList.add('othermethod');
+        document.querySelector('#print').innerHTML = 'Test '+method+' '+api_list;
     }
 }
 

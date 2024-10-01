@@ -168,8 +168,9 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
       top: 9px;
   }
   /*
-    GET, POST, PATCH, PUT, DELETE coloring
+    GET, POST, PATCH, PUT, DELETE, etc coloring
   */
+  /* GET */
   .getmethod {
     color: white;
     background-color: green;
@@ -181,6 +182,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
   .getmethod:disabled {
     background-color: rgba(0, 177, 0, 0.186); /* Green */
   }
+  /* POST */
   .postmethod {
     color: white;
     background-color: #BF7A03;
@@ -192,6 +194,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
   .postmethod:disabled {
     background-color: #bf7a03a4;
   }
+  /* PUT / PATCH */
   .updatemethod {
     background-color: purple;
     font-weight: bold;
@@ -203,6 +206,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
   .updatemethod:disabled {
     background-color: rgba(128, 0, 128, 0.422);
   }
+  /* DELETE */
   .deletemethod {
     color: white;
     background-color: rgb(204, 2, 2);
@@ -214,7 +218,42 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
   .deletemethod:disabled {
     background-color: rgba(204, 2, 2, 0.315);
   }
-
+  /* HEAD */
+  .headmethod {
+    color: white;
+    background-color: #007f31;
+    font-weight: bold;
+  }
+  .headmethod:hover {
+    background-color: #005922;
+  }
+  .headmethod:disabled {
+    background-color: #007f314b;
+  }
+  /* OPTIONS */
+  .optionsmethod {
+    color: white;
+    background-color: grey;
+    font-weight: bold;
+  }
+  .optionsmethod:hover {
+    background-color: rgb(81, 81, 81);
+  }
+  .optionsmethod:disabled {
+    background-color: rgba(204, 2, 2, 0.315);
+  }
+  /* FETCH and other user defined method */
+  .othermethod {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.742);
+    font-weight: bold;
+  }
+  .othermethod:hover {
+    background-color: black;
+  }
+  .othermethod:disabled {
+    background-color: rgba(0, 0, 0, 0.315);
+  }
   /*
     Danger method
   */
