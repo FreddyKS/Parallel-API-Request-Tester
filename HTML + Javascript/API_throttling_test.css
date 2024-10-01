@@ -53,15 +53,17 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     border-radius: 4px;
     cursor: pointer;
   }
-  .button:hover {
-    background-color: rgb(62, 0, 233); /* Green */
-  }
-  .button:disabled {
-    background-color: #00a8ce75; /* Green */
-  }
   /*
    Input form
   */
+  .width-70{
+    width: 80%;
+    float:right;
+  }
+  .width-30{
+    width: 20%;
+    float:left;
+  }
   input[type=text],input[type=number], input[type=form], select, textarea{
     width: 100%;
     font: 14px Consolas;
@@ -169,20 +171,48 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     GET, POST, PATCH, PUT, DELETE coloring
   */
   .getmethod {
-    color: green;
+    color: white;
+    background-color: green;
     font-weight: bold;
+  }
+  .getmethod:hover {
+    background-color: rgb(0, 62, 0);
+  }
+  .getmethod:disabled {
+    background-color: rgba(0, 177, 0, 0.186); /* Green */
   }
   .postmethod {
-    color: #BF7A03;
+    color: white;
+    background-color: #BF7A03;
     font-weight: bold;
+  }
+  .postmethod:hover {
+    background-color: #955f03;
+  }
+  .postmethod:disabled {
+    background-color: #bf7a03a4;
   }
   .updatemethod {
-    color: purple;
+    background-color: purple;
     font-weight: bold;
+    color: white;
+  }
+  .updatemethod:hover {
+    background-color: rgb(75, 0, 75);
+  }
+  .updatemethod:disabled {
+    background-color: rgba(128, 0, 128, 0.422);
   }
   .deletemethod {
-    color: rgb(204, 2, 2);
+    color: white;
+    background-color: rgb(204, 2, 2);
     font-weight: bold;
+  }
+  .deletemethod:hover {
+    background-color: rgb(132, 2, 2);
+  }
+  .deletemethod:disabled {
+    background-color: rgba(204, 2, 2, 0.315);
   }
 
   /*

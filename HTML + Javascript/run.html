@@ -29,10 +29,15 @@
         <option value="PATCH" class="updatemethod">PATCH</option>
         <option value="PUT" class="updatemethod">PUT</option>
         <option value="DELETE" class="deletemethod">DELETE</option>
-    </select><br>
+    </select>
+    <br>
 
-    <label for="url_list">API list</label><br>
-    <textarea id="url_list" name="url_list" required>https://catfact.ninja/fact</textarea><br>
+    <label for="url_list">API list</label>
+    <textarea id="url_list" name="url_list" onchange="changeColor();" required>https://catfact.ninja/fact</textarea>
+    <!--
+    <input type="text" id="url_list" name="url_list" class="width-70" value="https://catfact.ninja/fact" required>
+    -->
+    <br>
     
     <label for="post_field">POST / PUT / PATCH field (POSTFIELD)</label><br>
     <textarea id="post_field" name="post_field"></textarea><br>
@@ -45,9 +50,11 @@
     <label for="bearer">Bearer</label><br>
     <textarea id="bearer" name="bearer" value=""></textarea><br>
 
+    <!--
     <label for="content_type">Header</label><br>
     <input type="form" id="content_type" name="content_type" value="application/json" disabled></input><br>
     <br>
+    -->
 
     <div id="user-input" class="inline">
         <input type="text" 
@@ -70,7 +77,7 @@
     <br>
     <br>
 
-    <button id="print" class="button" onclick="fetchMultipleUrls();">Test</button><br><br>
+    <button id="print" class="button getmethod" onclick="fetchMultipleUrls();">Test GET https://catfact.ninja/fact</button><br><br>
     <div id='fetch-loading' class="fetching-loading">
         <span id="complete"></span>
     </div>

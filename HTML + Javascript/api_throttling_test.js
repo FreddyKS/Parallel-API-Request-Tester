@@ -268,17 +268,32 @@ async function fetchMultipleUrls() {
 
 function changeColor(){
     var method = document.getElementById('method').value;
+    var api_list = document.getElementById('url_list').value;
+    document.getElementById('print').className='button';
     if(method=='GET'){
         document.getElementById('method').className='getmethod';
+        document.getElementById('print').classList.add('getmethod');
+        document.querySelector('#print').innerHTML = 'Test GET '+api_list;
     }
     else if(method=='POST'){
         document.getElementById('method').className='postmethod';
+        document.getElementById('print').classList.add('postmethod');
+        document.querySelector('#print').innerHTML = 'Test POST '+api_list;
     }
     else if(method=='PUT' || method=='PATCH'){
         document.getElementById('method').className='updatemethod';
+        document.getElementById('print').classList.add('updatemethod');
+        if(method=='PUT'){
+            document.querySelector('#print').innerHTML = 'Test PUT '+api_list;
+        }
+        else{
+            document.querySelector('#print').innerHTML = 'Test PATCH '+api_list;
+        }
     }
     else{
         document.getElementById('method').className='deletemethod';
+        document.getElementById('print').classList.add('deletemethod');
+        document.querySelector('#print').innerHTML = 'Test DELETE '+api_list;
     }
 }
 
