@@ -38,6 +38,7 @@
         <option value="FETCH" class="othermethod">FETCH</option>
         <!-- <option value=""><input type="text" id="input_method_form"></option> -->
     </select>
+    <input type="text" id="custom_method" value="" placeholder="Or enter your own method"/ oninput="handleCustomMethod();"> 
     <br>
 
     <label for="url_list">API list</label>
@@ -51,7 +52,7 @@
     <textarea id="post_field" name="post_field"></textarea><br>
 
     <label for="loop">How many parallel</label><br>
-    <input type="number" name="loop" id="loop" value="1" onchange="displayDanger();" min="1" required></input><br>
+    <input type="number" name="loop" id="loop" value="1" oninput="displayDanger();" min="1" required></input><br>
     <div id="danger_parallel" class="danger-parallel">
         <span>WARNING : MORE THAN 50 PARALLEL REQUESTS. THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING</span>
     </div>

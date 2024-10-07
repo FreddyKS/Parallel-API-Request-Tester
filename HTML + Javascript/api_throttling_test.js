@@ -4,7 +4,15 @@ async function fetchMultipleUrls() {
     //Retrieve variables
     var loop = document.getElementById('loop').value;
     var url_list = document.getElementById('url_list').value.split("\n");
-    var method = document.getElementById('method').value;
+    //If custom method is defined
+    var method = '';
+    if(document.getElementById('method').disabled==false){
+        method = document.getElementById('method').value;
+    }
+    else{
+        method = document.getElementById('custom_method').value;
+    }
+    // ## var method = document.getElementById('method').value;
     var token = document.getElementById('bearer').value.split("\n");
     
     // -- Captcha validation, prevent bot --
@@ -314,6 +322,29 @@ function changeColor(){
         document.getElementById('method').className='othermethod';
         document.getElementById('print').classList.add('othermethod');
         document.querySelector('#print').innerHTML = 'Test '+method+' '+api_list;
+    }
+}
+
+//If user input custom method
+function handleCustomMethod(){
+    var method_value = document.getElementById('method').value;
+    var method_innerHTML = document.getElementById('method').innerHTML;
+    var api_list = document.getElementById('url_list').value;
+    var custom_method = document.getElementById('custom_method').value;
+    if(!custom_method){
+        document.getElementById('custom_method').className='';    
+        document.getElementById('method').disabled=false;
+        document.getElementById('print').className='button';
+        var method_class_name = document.getElementById('method').className;
+        document.getElementById('print').classList.add(method_class_name);
+        document.querySelector('#print').innerHTML = 'Test '+method_value+' '+api_list;
+    }
+    else{
+        document.getElementById('method').disabled=true;
+        document.getElementById('custom_method').className='othermethod';
+        document.getElementById('custom_method').classList.add('othermethod');
+        document.getElementById('print').classList.add('othermethod');
+        document.querySelector('#print').innerHTML = 'Test '+custom_method+' '+api_list;
     }
 }
 
