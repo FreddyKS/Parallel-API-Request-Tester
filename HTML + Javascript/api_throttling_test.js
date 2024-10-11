@@ -267,7 +267,7 @@ async function fetchMultipleUrls() {
         document.getElementById('fetch-loading').style.backgroundColor='red';
         document.getElementById('fetch-loading').style.color='white';
         document.getElementById('loading').style.display='none';
-        document.getElementById('complete').innerHTML='Invalid API `'+document.getElementById('url_list').value+'`<br>Error Detail -> `'+error+'`';
+        document.getElementById('complete').innerHTML='Cannot access `'+document.getElementById('url_list').value+'` with Method `'+method+'`<br>Error Detail -> `'+error+'`';
         //Re enable the button on error
         document.getElementById('print').disabled = false;
         return;
