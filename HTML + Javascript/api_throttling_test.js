@@ -53,37 +53,6 @@ async function fetchMultipleUrls() {
     }
     // ## var method = document.getElementById('method').value;
     var token = document.getElementById('bearer').value.split("\n");
-    
-    // -- Captcha validation, prevent bot --
-    var captcha = document.getElementById("image");
-    var usr_input = document.getElementById("submit").value;
-
-    // Check whether the input is equal
-    // to generated captcha or not
-    if (usr_input == captcha.innerHTML) {
-        generate();
-    }
-    else if(!usr_input){
-        document.getElementById('fetch-loading').style.visibility='visible';
-        document.getElementById('fetch-loading').style.backgroundColor='lightblue';
-        document.getElementById('fetch-loading').style.color='white';
-        var display_loading = list_data.captcha_please;
-        document.getElementById('complete').innerHTML=display_loading;
-        //Re enable the button on error
-        document.getElementById('print').disabled = false;
-        return;
-    }
-    else {
-        document.getElementById('fetch-loading').style.visibility='visible';
-        document.getElementById('fetch-loading').style.backgroundColor='red';
-        document.getElementById('fetch-loading').style.color='white';
-        var display_loading = list_data.wrong_captcha;
-        document.getElementById('complete').innerHTML=display_loading;
-        //Re enable the button on error
-        document.getElementById('print').disabled = false;
-        generate();
-        return;
-    }
 
     //https://chatgpt.com/share/8a0a8009-6292-4165-bac9-92c8e9ec87d5
     
@@ -110,6 +79,7 @@ async function fetchMultipleUrls() {
         document.getElementById('fetch-loading').style.visibility='visible';
         document.getElementById('fetch-loading').style.backgroundColor='red';
         document.getElementById('fetch-loading').style.color='white';
+        document.getElementById('url_list').focus();
         var display_loading = '`'+list_data.url_list_label+'`'+list_data.api_cannot_empty;
         document.getElementById('complete').innerHTML=display_loading;
         //Re enable the button on error
@@ -121,6 +91,7 @@ async function fetchMultipleUrls() {
             document.getElementById('fetch-loading').style.visibility='visible';
             document.getElementById('fetch-loading').style.backgroundColor='red';
             document.getElementById('fetch-loading').style.color='white';
+            document.getElementById('url_list').focus();
             var display_loading = list_data.bearer_same_as_token_not_empty+'`'+list_data.bearer_label+'`'+ list_data.line_same_as+'`'+list_data.url_list_label+'`';
             document.getElementById('complete').innerHTML=display_loading;
             //Re enable the button on error
@@ -133,6 +104,7 @@ async function fetchMultipleUrls() {
             document.getElementById('fetch-loading').style.visibility='visible';
             document.getElementById('fetch-loading').style.backgroundColor='red';
             document.getElementById('fetch-loading').style.color='white';
+            document.getElementById('url_list').focus();
             var display_loading = list_data.multiple_postfield_not_empty+'`POST FIELD`'+list_data.line_same_as+'`'+list_data.url_list_label+'`';
             document.getElementById('complete').innerHTML=display_loading;
             //Re enable the button on error
@@ -144,6 +116,37 @@ async function fetchMultipleUrls() {
         document.getElementById('fetch-loading').style.visibility='visible';
         document.getElementById('fetch-loading').style.backgroundColor='#69ff9b9e';
         document.getElementById('fetch-loading').style.color='black';
+    }
+    // -- Captcha validation, prevent bot --
+    var captcha = document.getElementById("image");
+    var usr_input = document.getElementById("submit").value;
+
+    // Check whether the input is equal
+    // to generated captcha or not
+    if (usr_input == captcha.innerHTML) {
+        generate();
+    }
+    else if(!usr_input){
+        document.getElementById('fetch-loading').style.visibility='visible';
+        document.getElementById('fetch-loading').style.backgroundColor='lightblue';
+        document.getElementById('fetch-loading').style.color='white';
+        document.getElementById('submit').focus();
+        var display_loading = list_data.captcha_please;
+        document.getElementById('complete').innerHTML=display_loading;
+        //Re enable the button on error
+        document.getElementById('print').disabled = false;
+        return;
+    }
+    else {
+        document.getElementById('fetch-loading').style.visibility='visible';
+        document.getElementById('fetch-loading').style.backgroundColor='red';
+        document.getElementById('fetch-loading').style.color='white';
+        var display_loading = list_data.wrong_captcha;
+        document.getElementById('complete').innerHTML=display_loading;
+        //Re enable the button on error
+        document.getElementById('print').disabled = false;
+        generate();
+        return;
     }
     //Loading starts
     let startTime = new Date();
