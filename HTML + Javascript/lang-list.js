@@ -122,7 +122,7 @@ list_id = {
 list_cn = {
     //HTML
     "header_label":"並行 API 請求測試器",
-    "attention_label":"<b>注意 : <br>透過使用這個工具， 您同意 100% 不參與任何網路攻擊.<br> 開發商對任何事情不負任何責任</b>",
+    "attention_label":"<b>注意 : <br>透過使用這個工具， 您同意 百分之百 不參與任何網路攻擊.<br> 開發商對任何事情不負任何責任</b>",
     "input_label":"輸入",
     "method_label":"方法",
     "custom_method":"或輸入自己的方法",
