@@ -4,25 +4,34 @@
     <script src="api_throttling_test.js">
 
     </script>
+    <script src="lang-list.js">
+
+    </script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallel-API-Request-Tester</title>
+    <title id="title_label">Parallel-API-Request-Tester</title>
 </head>
 <body onload="generate();">
     <div class="header-field">
         <center>
-        <h1><span>Parallel-API-Request-Tester</span></h1>
+        <h1><span id="header_label">Parallel-API-Request-Tester</span></h1>
         <div>
-        <span><b>ATTENTION : <br>BY USING THIS TOOL, YOU AGREED 100% NOT TO BE INVOLVED IN ANY CYBER ATTACK.<br> THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING</b></span>
+        <span id="attention_label"><b>ATTENTION : <br>BY USING THIS TOOL, YOU AGREED 100% NOT TO BE INVOLVED IN ANY CYBER ATTACK.<br> THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING</b></span>
         </div>
         </center>
+        <div class="radio-label" id="language_radio">
+            <input type="radio" id="language1" name="language" onclick="load_language();" value="EN" checked>
+            <label id="language1_label" for="option1">English</label>
+            <input type="radio" id="language2" name="language" onclick="load_language();" value="ID">
+            <label id="language2_label" for="option2">Bahasa Indonesia</label>
+        </div>
     </div>
     <div class="input-field">
-        <h1><span>Input</span></h1>
+        <h1><span id="input_label">Input</span></h1>
         <div class="input-field">
-    <label for="method">Method</label><br>
+    <label id="method_label" for="method">Method</label><br>
     <select name="method" id="method" onchange="changeColor();" class="getmethod">
         <option value="GET" class="getmethod" selected="selected">GET</option>
         <option value="POST" class="postmethod">POST</option>
@@ -41,22 +50,22 @@
     <input type="text" id="custom_method" value="" placeholder="Or enter your own method"/ oninput="handleCustomMethod();"> 
     <br>
 
-    <label for="url_list">API list</label>
-    <textarea id="url_list" name="url_list" oninput="changeColor();" required>https://catfact.ninja/fact</textarea>
+    <label id="url_list_label" for="url_list">API list</label>
+    <textarea id="url_list" name="url_list" oninput="changeColor();" required></textarea>
     <!--
     <input type="text" id="url_list" name="url_list" class="width-70" value="https://catfact.ninja/fact" required>
     -->
     <br>
     
-    <label for="post_field">POST / PUT / PATCH field (POSTFIELD)</label><br>
+    <label id="post_field_label" for="post_field">POST / PUT / PATCH field (POSTFIELD)</label><br>
     <textarea id="post_field" name="post_field"></textarea><br>
 
-    <label for="loop">How many parallel</label><br>
+    <label id="loop_label" for="loop">How many parallel</label><br>
     <input type="number" name="loop" id="loop" value="1" oninput="displayDanger();" min="1" required></input><br>
     <div id="danger_parallel" class="danger-parallel">
-        <span>WARNING : MORE THAN 50 PARALLEL REQUESTS. THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING</span>
+        <span id="danger_parallel_span">WARNING : MORE THAN 50 PARALLEL REQUESTS. THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING</span>
     </div>
-    <label for="bearer">Bearer</label><br>
+    <label id="bearer_label" for="bearer">Bearer</label><br>
     <textarea id="bearer" name="bearer" value=""></textarea><br>
 
     <!--
@@ -94,7 +103,7 @@
     </div>
 
     <div class="result-field">
-        <h1><span>Result</span></h1>
+        <h1><span id="result_label">Result</span></h1>
         <div class="result-field">
         <center>
         <div id="loading" class="loader"></div>
@@ -104,7 +113,7 @@
     </div>
     <div class="header-field">
         <center>
-        <span>Author : freddyksoe76712@gmail.com</span><br><br>
+        <span id="author_label">Author : freddyksoe76712@gmail.com</span><br><br>
         </center>
     </div>
 </body>
