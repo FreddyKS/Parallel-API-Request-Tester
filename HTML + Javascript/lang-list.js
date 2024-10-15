@@ -1,13 +1,29 @@
 /* 
-    Define your own language wording
-    Copy, edit the following template, then paste this on the lowest line 
-    don't replace the following text
-    <b> : <br>, </b>, \n and non empty quoted strings
-    See example below
-    
-    //<your language> word mapping
+    <English> 
+    Integrate with your language
+    Copy // TEMPLATE //, then paste on the bottom line, then edit it
+    Don't remove the following text :
+    <b>, :, <br>, </b>, \n, (), =>  
+    See // TEMPLATE // and list_en as reference
 
-    list_<your language> = {
+
+    <Bahasa Indonesia>
+    Integrasikan dengan bahasa anda
+    Salin // TEMPLATE //, lalu tempel di baris paling bawah, lalu sunting 
+    Jangan hilangkan teks berikut ini :
+    <b>, :, <br>, </b>, \n, (), => 
+    Lihat // TEMPLATE // dan list_en sebagai acuan
+    
+    <中文>
+    與您的語言集成
+    複製 // TEMPLATE //, 然後貼上到底線 , 然後編輯它 
+    不要刪除以下文本 :
+    <b>, :, <br>, </b>, \n, (), => 
+    看 // TEMPLATE  // 和 list_en 作為參考
+    
+    // TEMPLATE  //
+
+    list_... = {
     //HTML
     "header_label":"",
     "attention_label":"<b> : <br><br> </b>",
@@ -42,6 +58,8 @@
     "captcha_please":"",
     "response_unavailable":"() => "
     };
+
+    // -- TEMPLATE -- //
 */
 
 //English word mapping
