@@ -5,6 +5,9 @@ function load_lang_variables(){
     if(lang=="EN"){
         list_data = list_en;
     }
+    else if(lang=="CN"){
+        list_data = list_cn;
+    }
     else{
         list_data = list_id;
     }

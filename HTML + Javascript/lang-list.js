@@ -8,7 +8,7 @@
     //<your language> word mapping
 
     list_<your language> = {
-    //In html wordings
+    //HTML
     "header_label":"",
     "attention_label":"<b> : <br><br> </b>",
     "input_label":"",
@@ -23,7 +23,7 @@
     "result_label":"",
     "author_label":"",
     
-    //In javascript wordings
+    //Javascript
     "api_cannot_empty":"",
     "line_same_as":"",
     "bearer_same_as_token_not_empty":"\n",
@@ -46,14 +46,14 @@
 
 //English word mapping
 list_en = {
-    //In html wordings
+    //HTML
     "header_label":"Parallel API Request Tester",
     "attention_label":"<b>ATTENTION : <br>BY USING THIS TOOL, YOU AGREED 100% NOT TO BE INVOLVED IN ANY CYBER ATTACK.<br> THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING</b>",
     "input_label":"Input",
     "method_label":"Method",
     "custom_method":"Or enter your own method",
     "url_list_label":"API list",
-    "post_field_label":"POST / PUT / PATCH field (POSTFIELD)",
+    "post_field_label":"POST / PUT / PATCH (POSTFIELD)",
     "loop_label":"How many parallel",
     "danger_parallel_span":"WARNING : MORE THAN 50 PARALLEL REQUESTS. THE DEVELOPER HELD NO RESPONSIBILITY FOR ANYTHING",
     "bearer_label":"Bearer",
@@ -61,7 +61,7 @@ list_en = {
     "result_label":"Result",
     "author_label":"Author : freddyksoe76712@gmail.com",
     
-    //In javascript wordings
+    //Javascript
     "api_cannot_empty":"cannot be empty",
     "line_same_as":" lines have to be the same as ",
     "bearer_same_as_token_not_empty":"BEARER ERROR\n ",
@@ -83,7 +83,7 @@ list_en = {
 
 //Indonesian word mapping
 list_id = {
-    //In html wordings
+    //HTML
     "header_label":"Tester Request API Paralel",
     "attention_label":"<b>PERHATIAN : <br>DENGAN MEMAKAI ALAT INI, ANDA SETUJU 100% TIDAK AKAN TERLIBAT DALAM SERANGAN CYBER.<br> PENGEMBANG TIDAK BERTANGGUNG JAWAB ATAS APAPUN</b>",
     "input_label":"Input",
@@ -98,7 +98,7 @@ list_id = {
     "result_label":"Hasil",
     "author_label":"Pengembang : freddyksoe76712@gmail.com",
     
-    //In javascript wordings
+    //Javascript
     "api_cannot_empty":"tidak bisa kosong",
     "line_same_as":" harus sama panjangnya dengan ",
     "bearer_same_as_token_not_empty":"EROR BEARER\n ",
@@ -116,4 +116,41 @@ list_id = {
     "wrong_captcha":"Salah Captcha",
     "captcha_please":"Mohon masukkan Kode Captcha",
     "response_unavailable":"(Response dari Tester Request API Paralel) => Response tidak ada"
+};
+
+//Chinese word mapping
+list_cn = {
+    //HTML
+    "header_label":"並行 API 請求測試器",
+    "attention_label":"<b>注意 : <br>透過使用這個工具， 您同意 100% 不參與任何網路攻擊.<br> 開發商對任何事情不負任何責任</b>",
+    "input_label":"輸入",
+    "method_label":"方法",
+    "custom_method":"或輸入自己的方法",
+    "url_list_label":"API 列表",
+    "post_field_label":"POST / PUT / PATCH (POSTFIELD)",
+    "loop_label":"並聯多少個",
+    "danger_parallel_span":"警告 : 超過 50 個並行請求. 開發商對任何事情不負任何責任",
+    "bearer_label":"Bearer",
+    "submit":"验证码",
+    "result_label":"結果",
+    "author_label":"作者 : freddyksoe76712@gmail.com",
+    
+    //Javascript
+    "api_cannot_empty":"不能為空",
+    "line_same_as":" 長度必須與 ",
+    "bearer_same_as_token_not_empty":"BEARER 錯誤\n ",
+    "multiple_postfield_not_empty":"POSTFIELD 錯誤\n ",
+    "fetching":"加工 ",
+    "request":" 拜託",
+    "parallel":" 平行線 `",
+    "_request":"` 拜託 在 ",
+    "done_in":"` 完成於 <br>",
+    "seconds":" 秒",
+    "cannot_access":"無法訪問 `",
+    "with_method":"` 與方法 `",
+    "error_detail":"`<br>錯誤詳情 -> `",
+    "test":"測試",
+    "wrong_captcha":"验证码 錯誤的",
+    "captcha_please":"请输入您的 验证码",
+    "response_unavailable":"(並行 API 請求測試器 回覆) => 回覆 不可用"
 };
