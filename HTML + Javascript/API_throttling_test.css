@@ -358,6 +358,7 @@ input{
 
 .radio-label label:hover {
   cursor: pointer;
+  color: black;
 }
 
 .radio-label input:checked + label {
