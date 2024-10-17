@@ -150,7 +150,7 @@ async function fetchMultipleUrls() {
     }
     //Loading starts
     let startTime = new Date();
-    var display_loading = list_data.fetching + parseInt(loop)*parseInt(url_list.length) + list_data.request;
+    var display_loading = list_data.fetching + ( (isNaN(parseInt(loop)) || parseInt(loop) < 1) ? 1 : parseInt(loop))*parseInt(url_list.length) + list_data.request;
     document.getElementById('complete').innerHTML=display_loading;
     document.getElementById('loading').style.display='block';
     document.getElementById('loading').style.display='block';
@@ -403,6 +403,9 @@ function displayDanger(){
     var loop = document.getElementById('loop').value;
     if(loop>50){
         document.getElementById('danger_parallel').style.visibility='visible';
+    }
+    else if(loop<1){
+        loop=1;
     }
     else{
         document.getElementById('danger_parallel').style.visibility='hidden';
