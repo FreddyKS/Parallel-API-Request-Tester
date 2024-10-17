@@ -54,6 +54,7 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     cursor: pointer;
   }
   .button:hover {
+    cursor:pointer;
     background-color: #014fbd;
   }
   /*
@@ -187,9 +188,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     font-weight: bold;
   }
   .getmethod:hover {
+    cursor: pointer;
     background-color: rgb(0, 62, 0);
   }
   .getmethod:disabled {
+    cursor: context-menu;
     background-color: rgba(0, 177, 0, 0.186); /* Green */
   }
   /* POST */
@@ -199,9 +202,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     font-weight: bold;
   }
   .postmethod:hover {
+    cursor: pointer;
     background-color: #955f03;
   }
   .postmethod:disabled {
+    cursor: context-menu;
     background-color: #bf7a03a4;
   }
   /* PUT / PATCH */
@@ -211,9 +216,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     color: white;
   }
   .updatemethod:hover {
+    cursor: pointer;
     background-color: rgb(75, 0, 75);
   }
   .updatemethod:disabled {
+    cursor: context-menu;
     background-color: rgba(128, 0, 128, 0.422);
   }
   /* DELETE */
@@ -223,9 +230,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     font-weight: bold;
   }
   .deletemethod:hover {
+    cursor: pointer;
     background-color: rgb(132, 2, 2);
   }
   .deletemethod:disabled {
+    cursor: context-menu;
     background-color: rgba(204, 2, 2, 0.315);
   }
   /* HEAD */
@@ -235,9 +244,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     font-weight: bold;
   }
   .headmethod:hover {
+    cursor: pointer;
     background-color: #005922;
   }
   .headmethod:disabled {
+    cursor: context-menu;
     background-color: #007f314b;
   }
   /* OPTIONS */
@@ -247,9 +258,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     font-weight: bold;
   }
   .optionsmethod:hover {
+    cursor: pointer;
     background-color: rgb(81, 81, 81);
   }
   .optionsmethod:disabled {
+    cursor: context-menu;
     background-color: rgba(204, 2, 2, 0.315);
   }
   /* FETCH and other user defined method */
@@ -259,9 +272,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     font-weight: bold;
   }
   .othermethod:hover {
+    cursor: pointer;
     background-color: black;
   }
   .othermethod:disabled {
+    cursor: context-menu;
     background-color: rgba(0, 0, 0, 0.315);
   }
   /*
@@ -362,6 +377,11 @@ input{
 .radio-label label:hover {
   cursor: pointer;
   background-color: #8fbe73;
+}
+
+.radio-label label:disabled {
+  cursor: context-menu;
+  background-color: #bff99d;
 }
 
 .radio-label input:checked + label {
