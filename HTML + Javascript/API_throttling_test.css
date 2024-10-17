@@ -53,6 +53,9 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     border-radius: 4px;
     cursor: pointer;
   }
+  .button:hover {
+    background-color: #014fbd;
+  }
   /*
    Input form
   */
@@ -358,7 +361,7 @@ input{
 
 .radio-label label:hover {
   cursor: pointer;
-  color: black;
+  background-color: #8fbe73;
 }
 
 .radio-label input:checked + label {
