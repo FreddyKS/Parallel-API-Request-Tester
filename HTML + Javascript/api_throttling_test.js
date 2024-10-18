@@ -392,8 +392,8 @@ function handleCustomMethod(){
     }
     else{
         document.getElementById('method').disabled=true;
-        document.getElementById('custom_method').className='othermethod';
-        document.getElementById('custom_method').classList.add('othermethod');
+        document.getElementById('custom_method').className='custommethod';
+        document.getElementById('custom_method').classList.add('custommethod');
         document.getElementById('print').classList.add('othermethod');
         document.querySelector('#print').innerHTML = list_data.test+' '+custom_method+' '+api_list;
     }

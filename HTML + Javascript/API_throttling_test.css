@@ -279,6 +279,18 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
     cursor: context-menu;
     background-color: rgba(0, 0, 0, 0.315);
   }
+  .custommethod {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.742);
+    font-weight: bold;
+  }
+  .custommethod:hover {
+    background-color: black;
+  }
+  .othermethod:disabled {
+    cursor: context-menu;
+    background-color: rgba(0, 0, 0, 0.315);
+  }
   /*
     Danger method
   */
