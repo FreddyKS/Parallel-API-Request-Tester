@@ -96,7 +96,8 @@ list_en = {
     "test":"Test",
     "wrong_captcha":"Wrong Captcha",
     "captcha_please":"Please insert Captcha code",
-    "response_unavailable":"(Response from Parallel-API-Request-Tester) => Response unavailable"
+    "response_unavailable":"(Response from Parallel-API-Request-Tester) => Response unavailable",
+    "cancelled":"Cancelled"
 };
 
 //Indonesian word mapping
@@ -133,7 +134,8 @@ list_id = {
     "test":"Tes",
     "wrong_captcha":"Salah Captcha",
     "captcha_please":"Mohon masukkan Kode Captcha",
-    "response_unavailable":"(Response dari Tester Request API Paralel) => Response tidak ada"
+    "response_unavailable":"(Response dari Tester Request API Paralel) => Response tidak ada",
+    "cancelled":"Dibatalkan"
 };
 
 //Chinese word mapping
@@ -170,5 +172,6 @@ list_cn = {
     "test":"測試",
     "wrong_captcha":"验证码 錯誤的",
     "captcha_please":"请输入您的 验证码",
-    "response_unavailable":"(並行 API 請求測試器 回覆) => 回覆 不可用"
+    "response_unavailable":"(並行 API 請求測試器 回覆) => 回覆 不可用",
+    "cancelled":"取消"
 };

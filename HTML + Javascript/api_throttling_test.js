@@ -35,6 +35,33 @@ function load_language(){
     document.getElementById("author_label").innerHTML = list_data.author_label;
     changeColor();
 }
+function assign_class(method){
+    switch(method){
+        case 'GET':
+            return "getmethod";
+
+        case 'POST':
+            return "postmethod";
+        
+        case 'PUT':
+        case 'PATCH':
+            return "updatemethod";
+        
+        case 'DELETE':
+            return "deletemethod";
+        
+        case 'HEAD':
+            return "headmethod";
+        
+        case 'OPTIONS':
+            return "optionsmethod";
+        
+        default:
+            return "othermethod";
+        
+    }
+}
+
 async function fetchMultipleUrls() {
     
     //Load appropriate file
@@ -69,8 +96,11 @@ async function fetchMultipleUrls() {
 
     //End of testing
 
-    //Disable the button
-    document.getElementById('print').disabled = true;
+    //Disable the button (change to cancel)
+    //document.getElementById('print').disabled = true;
+    
+    //Alter the button to cancel request
+    
 
     //Empties the result
     document.getElementById('output').innerHTML = '';
@@ -149,6 +179,10 @@ async function fetchMultipleUrls() {
         return;
     }
     //Loading starts
+    let initial_inner_html_print = document.getElementById("print").innerHTML;
+    let initial_classList = document.getElementById("method").value;
+    document.getElementById("print").innerHTML = '(CANCEL) ' + document.getElementById("print").innerHTML;
+    document.getElementById("print").classList.add("cancelmethod");
     let startTime = new Date();
     var display_loading = list_data.fetching + ( (isNaN(parseInt(loop)) || parseInt(loop) < 1) ? 1 : parseInt(loop))*parseInt(url_list.length) + list_data.request;
     document.getElementById('complete').innerHTML=display_loading;
@@ -188,7 +222,18 @@ async function fetchMultipleUrls() {
             */
         }
     }
-    console.log(urls);
+    /**
+     * Define abort controller
+     */
+    let controller = new AbortController(); // Initial AbortController
+    let signal = controller.signal;
+    //Event listener on cancel
+    function handleCancel(){
+        controller.abort();
+        document.getElementById("print").removeEventListener("click", handleCancel);
+    }
+    document.getElementById("print").addEventListener("click", handleCancel);
+    
     let afterLoop = new Date();
     let timeLoop = (afterLoop-startTime)/1000;
     console.log('urls.push duration : '+timeLoop+' s');
@@ -203,7 +248,8 @@ async function fetchMultipleUrls() {
                             headers: {
                                 'Authorization': `Bearer ${url.bearer}`,
                                 'Content-Type': `${content}`
-                            }
+                            },
+                            signal: signal // Pass the signal to fetch requests
                         })
                     )
                 );
@@ -247,7 +293,13 @@ async function fetchMultipleUrls() {
             document.querySelector('input[name="language"]').disabled=false;
         
             //Re enable the button
-            document.getElementById('print').disabled = false;
+            //document.getElementById('print').disabled = false;
+
+            //Remove cancel on click and reset the button
+            document.getElementById("print").className = 'button';
+            document.getElementById("print").classList.add(assign_class(initial_classList));
+            document.getElementById("print").innerHTML = initial_inner_html_print;
+            document.getElementById("print").disabled = false;
         }
         else{
             // Run these requests in parallel using Promise.all
@@ -259,7 +311,8 @@ async function fetchMultipleUrls() {
                             'Authorization': `Bearer ${url.bearer}`,
                             'Content-Type': `${content}`
                         },
-                        body: url.postfield
+                        body: url.postfield,
+                        signal: signal // Pass the signal to fetch requests
                     })
                 )
             );
@@ -303,17 +356,34 @@ async function fetchMultipleUrls() {
 
 
             //Re enable the button
-            document.getElementById('print').disabled = false;
+            //document.getElementById('print').disabled = false;
+            //Remove cancel on click and reset the button
+            document.getElementById("print").className = 'button';
+            document.getElementById("print").classList.add(assign_class(initial_classList));
+            document.getElementById("print").innerHTML = initial_inner_html_print;
+            document.getElementById("print").disabled = false;
         }
 
     } catch (error) {
-        document.getElementById('fetch-loading').style.visibility='visible';
-        document.getElementById('fetch-loading').style.backgroundColor='red';
-        document.getElementById('fetch-loading').style.color='white';
-        document.getElementById('loading').style.display='none';
-        document.getElementById('complete').innerHTML=list_data.cannot_access+document.getElementById('url_list').value+list_data.with_method+method+list_data.error_detail+error+'`';
-        //Re enable the button on error
-        document.getElementById('print').disabled = false;
+        if(error.name === 'AbortError'){
+            document.getElementById('fetch-loading').style.visibility='visible';
+            document.getElementById('fetch-loading').style.backgroundColor='white';
+            document.getElementById('fetch-loading').style.color='black';
+            document.getElementById('loading').style.display='none';
+            document.getElementById('complete').innerHTML=method+' `'+document.getElementById('url_list').value+'` '+list_data.cancelled;
+        }
+        else{
+            document.getElementById('fetch-loading').style.visibility='visible';
+            document.getElementById('fetch-loading').style.backgroundColor='red';
+            document.getElementById('fetch-loading').style.color='white';
+            document.getElementById('loading').style.display='none';
+            document.getElementById('complete').innerHTML=list_data.cannot_access+document.getElementById('url_list').value+list_data.with_method+method+list_data.error_detail+error+'`';
+        }
+        
+        document.getElementById("print").className = 'button';
+        document.getElementById("print").classList.add(assign_class(initial_classList));
+        document.getElementById("print").innerHTML = initial_inner_html_print;
+        document.getElementById("print").disabled = false;
         return;
     }
 }
